@@ -3,17 +3,17 @@ import './Nav.scss';
 
 function Nav() {
   return (
-    <nav>
-      <div class="inner">
-        <div class="logo">
+    <nav className="nav">
+      <div className="inner">
+        <div className="logo">
           <img src="images/logo.jpeg" alt="logo" />
-          <h1>ㅊ ㄷ ㅎ</h1>
+          <h1 className="logo-title">ㅊ ㄷ ㅎ</h1>
         </div>
-        <div class="menu">
-          <div class="market_btn">
+        <div className="menu">
+          <div className="market-btn">
             <a href="#">담화마켓(스토어)</a>
           </div>
-          <div class="login_btn">
+          <div className="login-btn">
             <a href="#">로그인</a>
           </div>
         </div>

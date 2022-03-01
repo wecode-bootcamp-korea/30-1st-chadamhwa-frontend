@@ -1,4 +1,4 @@
-footer {
+.footer {
   margin-top: 90px;
   width: 100%;
   background-color: #fffcf7;
@@ -27,11 +27,11 @@ footer {
           margin-right: 40px;
         }
       }
-      ul {
+      .company-infolist {
         list-style: none;
         padding: 0;
 
-        li {
+        .company-info {
           font-size: 12px;
           margin: 0 0 10px;
           b {

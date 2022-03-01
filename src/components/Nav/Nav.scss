@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
-nav {
+.nav {
   width: 100%;
 
   .inner {
@@ -15,7 +15,7 @@ nav {
       display: flex;
       align-items: center;
 
-      h1 {
+      .logo-title {
         font-family: 'gugi';
         color: #505050;
       }
@@ -43,7 +43,7 @@ nav {
         }
       }
 
-      .login_btn a {
+      .login-btn a {
         margin: -1px 20px 0px;
         color: #f4bb5f;
       }
