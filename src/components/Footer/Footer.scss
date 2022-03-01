@@ -10,10 +10,9 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding-left: 40px;
 
     .aside_left {
-      width: 800px;
+      width: fit-content;
 
       .wrap {
         display: flex;
@@ -45,7 +44,7 @@
     }
 
     .aside_right {
-      width: 400px;
+      width: fit-content;
       height: 162px;
       display: flex;
       flex-direction: column;
