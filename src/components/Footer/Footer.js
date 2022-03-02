@@ -7,13 +7,13 @@ function Footer() {
         <div className="aside_left">
           <ul className="wrap">
             <li className="provision">
-              <a href="#">이용약관</a>
+              <a href="/">이용약관</a>
             </li>
             <li className="policy">
-              <a href="#">정보처리방침</a>
+              <a href="/">정보처리방침</a>
             </li>
             <li className="partner">
-              <a href="#">파트너 문의</a>
+              <a href="/">파트너 문의</a>
             </li>
           </ul>
           <ul className="company-infolist">
@@ -59,19 +59,19 @@ function Footer() {
             <li>평일 10:00 - 18:00, 주말 휴무</li>
           </ul>
           <ul className="sns">
-            <a href="#">
+            <a href="/">
               <img src="images/instagram_logo.png" alt="instagram_logo" />
             </a>
-            <a href="#">
+            <a href="/">
               <img src="images/youtube_logo.png" alt="youtube_logo" />
             </a>
-            <a href="#">
+            <a href="/">
               <img src="images/kakao_logo.png" alt="kakao_logo" />
             </a>
-            <a href="#">
+            <a href="/">
               <img src="images/facebook_logo.png" alt="facebook_logo" />
             </a>
-            <a href="#">
+            <a href="/">
               <img src="images/naver_logo.png" alt="naver_logo" />
             </a>
           </ul>
