@@ -3,13 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Login from './pages/Login/Login';
 import Detail from './pages/Detail/Detail';
+import Event from './pages/Event/Event';
 import Cart from './pages/Cart/Cart';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/main" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/event" element={<Event />} />
         <Route path="/detail" element={<Detail />} />
