@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="inner">
-        <div className="aside_left">
+        <div className="aside-left">
           <ul className="wrap">
             <li className="provision">
               <a href="/">이용약관</a>
@@ -18,7 +18,7 @@ function Footer() {
           </ul>
           <ul className="company-infolist">
             <li className="company-info">
-              <b>담화컴퍼니 주식회사</b>
+              <span className="bold">담화컴퍼니 주식회사</span>
               <span>대표 : 박 별</span>
               <span>정보보호 책임자 : 임정찬</span>
             </li>
@@ -28,7 +28,7 @@ function Footer() {
                 서울특별시 서초구 강남대로 527,10층(브랜드칸타워,차담화)
               </span>
               <span>사업자등록번호 : 620-81-58299</span>
-              <b>사업자확인</b>
+              <span className="bold">사업자확인</span>
             </li>
 
             <li className="company-info">
@@ -38,10 +38,10 @@ function Footer() {
             </li>
 
             <li className="company-info">
-              <b>
+              <span className="bold">
                 차담화는 통신판매중개자로서 통신판매 당사자가 아니며, 판매자가
                 등록한 상품정보 및 거래에 대해 차담화는 책임을 지지 않습니다.
-              </b>
+              </span>
             </li>
 
             <li className="company-info">
@@ -49,16 +49,16 @@ function Footer() {
                 고객님의 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서
                 가입한 NICE구매안전 (에스크로)서비스를 이용하실 수 있습니다.
               </span>
-              <b>서비스가입사실 확인</b>
+              <span className="bold">서비스가입사실 확인</span>
             </li>
           </ul>
         </div>
-        <div className="aside_right">
+        <div className="aside-right">
           <ul className="info">
             <span>고객센터: 070-5014-1282</span>
             <li>평일 10:00 - 18:00, 주말 휴무</li>
           </ul>
-          <ul className="sns">
+          <div className="sns">
             <a href="/">
               <img src="images/instagram_logo.png" alt="instagram_logo" />
             </a>
@@ -74,7 +74,7 @@ function Footer() {
             <a href="/">
               <img src="images/naver_logo.png" alt="naver_logo" />
             </a>
-          </ul>
+          </div>
         </div>
       </div>
     </footer>
