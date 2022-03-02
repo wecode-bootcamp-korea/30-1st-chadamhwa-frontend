@@ -2,6 +2,10 @@
 
 .nav {
   width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
 
   .inner {
     max-width: 1180px;
@@ -17,6 +21,7 @@
 
       .logo-title {
         font-family: 'gugi';
+        font-size: 25px;
         color: #505050;
       }
 

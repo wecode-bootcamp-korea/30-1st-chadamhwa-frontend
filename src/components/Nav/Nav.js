@@ -7,7 +7,7 @@ function Nav() {
       <div className="inner">
         <div className="logo">
           <img src="images/logo.jpeg" alt="logo" />
-          <h1 className="logo-title">ㅊ ㄷ ㅎ</h1>
+          <h1 className="logo-title">ㅊㄷㅎ</h1>
         </div>
         <div className="menu">
           <div className="market-btn">

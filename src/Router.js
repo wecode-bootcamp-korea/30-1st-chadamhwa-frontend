@@ -9,8 +9,9 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/main" element={<Main />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/event" element={<Event />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
