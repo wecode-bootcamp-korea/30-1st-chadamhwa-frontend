@@ -11,7 +11,7 @@ function Products() {
       {/* <Subnav /> */}
       <main className="main">
         <div className="wrapper">
-          <div className="banner"></div>
+          <div className="banner" />
           <div className="title">전체 상품</div>
           <div className="sub-title">차담화가 자신있게 선보입니다.</div>
           <div className="contents-wrapper">
@@ -25,24 +25,15 @@ function Products() {
               </div>
               <div className="filter-caffein">
                 <div className="filter-title">카페인</div>
-                <button>0%-10%</button>
-                <button>10%-20%</button>
-                <button>20%-30%</button>
-                <button>30%-50%</button>
-              </div>
-              <div className="filter-farm">
-                <div className="filter-title">농 장</div>
-                <button>강원</button>
-                <button>제주</button>
-                <button>진도</button>
-                <button>보성</button>
+                <button>유</button>
+                <button>무</button>
               </div>
               <div className="filter-price">
                 <div className="filter-title">가 격</div>
                 <input type="range" />
               </div>
             </div>
-            <div className="contents"></div>
+            <div className="contents" />
           </div>
         </div>
       </main>
