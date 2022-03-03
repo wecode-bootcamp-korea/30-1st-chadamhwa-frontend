@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+.Detail {
+  text-align: center;
+  padding: 20px 200px;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .rightSide {
+    text-align: right;
+    float: right;
+    box-shadow: gray 0px 0px 3px 0px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .product {
+    .productIntro {
+      text-align: left;
+      .productImg {
+      }
+
+      .productIntroduction {
+        float: right;
+      }
+    }
+
+    .productDetails {
+    }
+  }
+
+  .review {
+  }
+}
