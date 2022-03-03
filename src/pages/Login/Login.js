@@ -1,12 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 
 function Login() {
+  let [loginEmail, setLoginEmail] = useState('');
+  let [loginPw, setLoginPw] = useState('');
+  let loginValid = loginEmail.includes('@') && loginPw.length > 7;
+  let validInformE = loginEmail.includes('@');
+  let validInformPw = loginPw.length > 7;
+
+  function handleEmailInput(event) {
+    setLoginEmail(event.target.value);
+    console.log(event.target.value);
+  }
+
+  function handlePwInput(event) {
+    setLoginPw(event.target.value);
+    console.log(event.target.value);
+  }
+
+  // function mainCondition(event) {
+  //   event.preventDefault();
+  //   fetch('http://10.58.5.209:8000/users/signin', {
+  //     method: 'post',
+  //     body: JSON.stringify({
+  //       email: loginId,
+  //       password: loginPw,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       if (result.message === 'SUCCESS') {
+  //         alert('환영합니다!');
+  //         navigate('/');
+  //       } else {
+  //         loginValid ? ''
+  //       }
+  //     });
+  // }
+
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <section>
         <div className="wrap">
           <div className="login">로그인</div>
@@ -15,14 +51,32 @@ function Login() {
             <form>
               <div className="wrap">
                 <span>이메일</span>
-                <input type="text" placeholder="이메일을 입력해주세요" />
+                <input
+                  type="text"
+                  placeholder="이메일을 입력해주세요"
+                  onChange={handleEmailInput}
+                  className={validInformE ? '' : 'inputFail'}
+                />
+                <span className={validInformE ? 'ok' : 'warning'}>
+                  이메일을 입력해주세요
+                </span>
               </div>
               <div className="wrap">
                 <span>비밀번호</span>
-                <input type="password" placeholder="비밀번호를 입력해주세요" />
+                <input
+                  type="password"
+                  placeholder="비밀번호를 입력해주세요"
+                  onChange={handlePwInput}
+                  className={validInformPw ? '' : 'inputFail'}
+                />
+                <span className={validInformPw ? 'ok' : 'warning'}>
+                  비밀번호를 입력해주세요
+                </span>
               </div>
 
-              <button type="submit">로그인</button>
+              <button className={loginValid ? 'btnActive' : 'btnDie'}>
+                로그인
+              </button>
             </form>
           </div>
 
@@ -35,7 +89,7 @@ function Login() {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

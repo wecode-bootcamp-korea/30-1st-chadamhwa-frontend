@@ -26,7 +26,7 @@ body {
 
       .detail_info {
         width: 100%;
-        height: 353px;
+        height: 400px;
         line-height: 50px;
         padding: 40px 50px 30px;
 
@@ -55,6 +55,26 @@ body {
             }
           }
 
+          .ok {
+            display: none;
+            text-align: center;
+            color: #f44336;
+            margin-top: -20px;
+            font-size: 0.75rem;
+            font-weight: 400;
+          }
+          .warning {
+            text-align: center;
+            color: #f44336;
+            margin-top: -20px;
+            font-size: 0.75rem;
+            font-weight: 400;
+          }
+
+          .inputFail {
+            border-bottom: 2px solid #f44336;
+          }
+
           button {
             width: 150px;
             height: 45px;
@@ -64,7 +84,20 @@ body {
             padding: 1px 6px;
             font-size: 18px;
             color: #b2b2b2;
+            font-weight: bold;
             margin-top: 45px;
+          }
+
+          .btnActive {
+            background-color: #f4bb5f;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+          }
+
+          .btnDie {
+            cursor: not-allowed;
           }
         }
       }
