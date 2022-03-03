@@ -21,7 +21,7 @@ function Main() {
       </figure>
       <section className="section">
         <div className="inner">
-          <img src="/images/leaf.png" alt="leaf" />
+          <img src="/images/sommelier.png" alt="tea-sommelier" />
           <span>"어떤 차를 마실지 고민이라면, 이 차는 어때요?"</span>
           <p>차담화 전통차 티소믈리에의 이번 주 P.I.C.K!</p>
           <div className="more-btn">
@@ -84,9 +84,9 @@ function Main() {
       </section>
       <section className="section">
         <div className="inner">
-          <img src="/images/sofa.png" alt="sofa" />
-          <span>"여유로운 나만의 시간을 완성시켜 줄 거예요"</span>
-          <p>드라마, 영화 보면서 홀-짝이기 좋은 차!</p>
+          <img src="/images/mountain.png" alt="mountain" />
+          <span>"요즈음 많이 지치고 피곤하시나요 ?"</span>
+          <p>태백산맥의 정기를 이어 받은 축복의 찻잎이 준비되어 있습니다 !</p>
           <div className="more-btn">
             <a href="/">더보기 ></a>
           </div>
@@ -147,9 +147,9 @@ function Main() {
       </section>
       <section className="section">
         <div className="inner">
-          <img src="/images/donut.png" alt="donut" />
-          <span>"기분 좋은 달콤 쌉싸름함이 입안 가득 퍼져요"</span>
-          <p>달달한 간식과 함께 마시기 좋은 차!</p>
+          <img src="/images/jeju.png" alt="jeju" />
+          <span>"내 거친 생각과 불안한 눈빛과 그걸 지켜보는 하르방"</span>
+          <p>하르방님 must have I.T.E.M !</p>
           <div className="more-btn">
             <a href="/">더보기 ></a>
           </div>
@@ -210,9 +210,9 @@ function Main() {
       </section>
       <section className="section">
         <div className="inner">
-          <img src="/images/cafe.png" alt="cafe" />
-          <span>"나만의 분위기로 만드는 홈카페, 어떤가요?"</span>
-          <p>코로나로 인한 집콕 생활, 나만의 홈카페 감성을 만들 수 있어요!</p>
+          <img src="/images/beach.png" alt="beach" />
+          <span>"서해안을 건너, 동해안을 건너, 남해안을 건너서라도"</span>
+          <p>당신이 부르면 달려갈거야~ 해풍을 뚫고서라도 !</p>
           <div className="more-btn">
             <a href="/">더보기 ></a>
           </div>
@@ -273,9 +273,9 @@ function Main() {
       </section>
       <section className="section">
         <div className="inner">
-          <img src="/images/party.png" alt="party" />
-          <span>"간단한 간식만으로도 맛있는 자리를 만들 수 있어요"</span>
-          <p>급하게 준비해야 할 때, 격식을 갖추어야만 하는 자리에 유용해요!</p>
+          <img src="/images/flowers.png" alt="flowers" />
+          <span>"거울아 거울아 세상에서 누가 제일 예쁘니?"</span>
+          <p>꽃잎차를 머금은 당신이 제일 에뻐요 !</p>
           <div className="more-btn">
             <a href="/">더보기 ></a>
           </div>
@@ -336,9 +336,9 @@ function Main() {
       </section>
       <section className="section">
         <div className="inner">
-          <img src="/images/present.png" alt="present" />
-          <span>"소중한 사람을 위한 선물이 고민되시나요?"</span>
-          <p>소중한 사람에게 어울릴 차를 커스텀 할 수 있는 기회!</p>
+          <img src="/images/green-tea.png" alt="green-tea" />
+          <span>"나만의 시간이 필요하시나요?"</span>
+          <p>차담화와 함께하는 우리만의 시간 !</p>
           <div className="more-btn">
             <a href="/">더보기 ></a>
           </div>
