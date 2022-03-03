@@ -1,0 +1,65 @@
+.main {
+  .wrapper {
+    margin: 0 auto;
+    padding: 20 0 250 0;
+    width: 1100px;
+
+    .banner {
+      margin: 0 auto;
+      width: 1000px;
+      height: 200px;
+    }
+    .title {
+      margin-top: 30px;
+      text-align: center;
+      height: 39px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+    .sub-title {
+      margin-top: 15px;
+      text-align: center;
+      height: 25px;
+      font-weight: 700;
+    }
+    .contents-wrapper {
+      padding: 40px;
+
+      .filters {
+        .filter-categories {
+          display: flex;
+          height: 30px;
+          margin-bottom: 10px;
+        }
+
+        .filter-caffein {
+          display: flex;
+          height: 30px;
+          margin-bottom: 10px;
+        }
+
+        .filter-farm {
+          display: flex;
+          height: 30px;
+          margin-bottom: 10px;
+        }
+
+        .filter-price {
+          display: flex;
+          height: 30px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.filter-title {
+  min-width: 61px;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: rgb(244, 244, 244);
+  text-align: center;
+  line-height: 30px;
+}
