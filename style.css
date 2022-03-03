@@ -88,6 +88,157 @@ nav .menu .login_btn a {
   color: #9b9b9b;
 }
 
+.figure {
+  height: 300px;
+  max-width: 100%;
+  background-color: rgb(246, 219, 248);
+  margin: 0 auto;
+  margin-top: 95px;
+}
+
+.figure .wrap {
+  display: flex;
+  justify-content: space-between;
+  line-height: 280px;
+  margin: 0 150px;
+}
+
+.figure .wrap button {
+  all: unset;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.section {
+  width: 100%;
+}
+
+.section .inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 180px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section .inner img {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 15px;
+}
+
+.settion .inner span {
+  color: #f4bb5f;
+  font-weight: bold;
+  margin: 10px 0 0;
+  text-align: left;
+}
+
+.section .inner p {
+  color: #3e3e3e;
+  font-size: 18px;
+  margin: 15px 0 20px;
+  font-weight: bold;
+}
+
+.section .inner .more-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.section .inner .more-btn a {
+  text-decoration: none;
+  color: #fe968d;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 77px 20px 0;
+  letter-spacing: 1.2px;
+}
+.section .inner .more-btn a:hover {
+  transition: 0.5s;
+  color: #faaca7;
+}
+
+.slider {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider a {
+  text-decoration: none;
+  color: #b2b2b2;
+  display: block;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  line-height: 50px;
+  border-radius: 50%;
+  border: 1px solid #b2b2b2;
+  text-align: center;
+}
+
+.product-box {
+  margin: 10px 20px;
+  display: flex;
+}
+
+.product-box .wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-box .wrap img {
+  width: 250px;
+  height: 310px;
+  border-radius: 10px;
+  margin: 0px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.product-box .wrap img:nth-child(4) {
+  margin-right: 0;
+}
+
+.product-box .wrap img:hover {
+  transform: scale(0.9);
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+span {
+  color: #58595b;
+  text-indent: 10px;
+  font-size: 13px;
+}
+
+span:nth-of-type(1) {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+span:nth-of-type(2) {
+  font-size: 16px;
+}
+
+span:nth-of-type(3) {
+  text-indent: 4px;
+  color: #9b9b9b;
+}
+
+span .fa-star {
+  color: #f4bb5f;
+}
+
+span .bold {
+  color: #3e3e3e;
+}
+
 footer {
   margin-top: 90px;
   width: 100%;
