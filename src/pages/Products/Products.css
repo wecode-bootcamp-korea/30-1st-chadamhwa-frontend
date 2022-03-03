@@ -1,14 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 .main .wrapper {
   margin: 0 auto;
   padding: 20 0 250 0;
   width: 1100px;
-  background-color: pink;
+  /* background-color: pink; */
 }
 .main .wrapper .banner {
   margin: 0 auto;
   width: 1000px;
   height: 200px;
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 
 .main .wrapper .title {
@@ -29,8 +33,34 @@
 }
 .main .wrapper .contents-wrapper .filters .filter-categories {
   display: flex;
+  height: 30px;
+  margin-bottom: 10px;
 }
 
 .main .wrapper .contents-wrapper .filters .filter-caffein {
   display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.main .wrapper .contents-wrapper .filters .filter-farm {
+  display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.main .wrapper .contents-wrapper .filters .filter-price {
+  display: flex;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.filter-title {
+  min-width: 61px;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: white;
+  text-align: center;
+  line-height: 30px;
 }
