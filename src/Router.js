@@ -11,7 +11,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/Products" element={<Products />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/login" element={<Login />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
