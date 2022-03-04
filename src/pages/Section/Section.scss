@@ -1,0 +1,132 @@
+@charset 'utf-8';
+
+.section {
+  width: 100%;
+
+  .inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 180px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 35px;
+      height: 35px;
+      margin-bottom: 15px;
+    }
+
+    span {
+      color: #f4bb5f;
+      font-weight: bold;
+      margin: 10px 0 0;
+      text-align: left;
+    }
+
+    p {
+      color: #3e3e3e;
+      font-size: 18px;
+      margin: 15px 0 20px;
+      font-weight: bold;
+    }
+
+    .more-btn {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        text-decoration: none;
+        color: #fe968d;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 77px 20px 0;
+        letter-spacing: 1.2px;
+
+        &:hover {
+          transition: 0.5s;
+          color: #faaca7;
+        }
+      }
+    }
+
+    .slider {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        color: #b2b2b2;
+        display: block;
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+        line-height: 50px;
+        border-radius: 50%;
+        border: 1px solid #b2b2b2;
+        text-align: center;
+      }
+
+      .product-box {
+        margin: 10px 20px;
+        display: flex;
+
+        .wrap {
+          display: flex;
+          flex-direction: column;
+
+          img {
+            width: 250px;
+            height: 310px;
+            border-radius: 10px;
+            margin: 0px;
+            margin-right: 10px;
+            margin-bottom: 6px;
+            cursor: pointer;
+
+            &:nth-child(4) {
+              margin-right: 0;
+            }
+
+            &:hover {
+              transform: scale(0.9);
+              transition: 0.5s;
+              opacity: 0.8;
+            }
+          }
+
+          span {
+            color: #58595b;
+            text-indent: 10px;
+            font-size: 13px;
+
+            &:nth-of-type(1) {
+              margin-bottom: 15px;
+              font-size: 15px;
+            }
+
+            &:nth-of-type(2) {
+              font-size: 16px;
+            }
+
+            &:nth-of-type(3) {
+              text-indent: 4px;
+              color: #9b9b9b;
+            }
+
+            .fa-star {
+              color: #f4bb5f;
+            }
+
+            .bold {
+              color: #3e3e3e;
+            }
+          }
+        }
+      }
+    }
+  }
+}
