@@ -17,14 +17,14 @@
       margin-bottom: 15px;
     }
 
-    span {
+    .propose {
       color: #f4bb5f;
       font-weight: bold;
       margin: 10px 0 0;
-      text-align: left;
+      text-align: center;
     }
 
-    p {
+    .recommend {
       color: #3e3e3e;
       font-size: 18px;
       margin: 15px 0 20px;
@@ -73,59 +73,6 @@
       .product-box {
         margin: 10px 20px;
         display: flex;
-
-        .wrap {
-          display: flex;
-          flex-direction: column;
-
-          img {
-            width: 250px;
-            height: 310px;
-            border-radius: 10px;
-            margin: 0px;
-            margin-right: 10px;
-            margin-bottom: 6px;
-            cursor: pointer;
-
-            &:nth-child(4) {
-              margin-right: 0;
-            }
-
-            &:hover {
-              transform: scale(0.9);
-              transition: 0.5s;
-              opacity: 0.8;
-            }
-          }
-
-          span {
-            color: #58595b;
-            text-indent: 10px;
-            font-size: 13px;
-
-            &:nth-of-type(1) {
-              margin-bottom: 15px;
-              font-size: 15px;
-            }
-
-            &:nth-of-type(2) {
-              font-size: 16px;
-            }
-
-            &:nth-of-type(3) {
-              text-indent: 4px;
-              color: #9b9b9b;
-            }
-
-            .fa-star {
-              color: #f4bb5f;
-            }
-
-            .bold {
-              color: #3e3e3e;
-            }
-          }
-        }
       }
     }
   }

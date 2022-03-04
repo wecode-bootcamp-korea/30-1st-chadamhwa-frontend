@@ -3,7 +3,7 @@ import './Main.scss';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import Subnav from '../../components/Subnav/Subnav';
-import Section from '../../pages/Section/Section';
+import Section from './Section/Section';
 
 function Main() {
   return (
@@ -38,7 +38,7 @@ function Main() {
         className="section"
         img="/images/jeju.png"
         span='"내 거친 생각과 불안한 눈빛과 그걸 지켜보는 하르방"'
-        p="하르방's must have I.T.E.M !"
+        p="하르방's Must Have I.T.E.M !"
       />
 
       <Section
@@ -52,7 +52,7 @@ function Main() {
         className="section"
         img="/images/flowers.png"
         span='"거울아 거울아 세상에서 누가 제일 예쁘니 ?"'
-        p="꽃잎차를 머금은 당신이 제일 에뻐요 !"
+        p="꽃잎차를 머금은 당신이 제일 예뻐요 !"
       />
 
       <Section
