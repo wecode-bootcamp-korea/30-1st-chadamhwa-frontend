@@ -13,8 +13,9 @@ body {
 
     .wrap {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      line-height: 280px;
+      line-height: 300px;
       margin: 0 150px;
 
       button {

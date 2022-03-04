@@ -60,11 +60,11 @@
       a {
         text-decoration: none;
         color: #b2b2b2;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 45px;
         height: 45px;
-        font-size: 30px;
-        line-height: 50px;
         border-radius: 50%;
         border: 1px solid #b2b2b2;
         text-align: center;
