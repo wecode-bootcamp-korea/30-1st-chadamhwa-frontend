@@ -1,32 +1,246 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 .Detail {
-  text-align: center;
-  padding: 20px 200px;
+  min-width: 960px;
+  height: 976px;
+  padding: 20px 0px 250px 20px;
   font-family: 'Noto Sans KR', sans-serif;
 
-  .rightSide {
-    text-align: right;
-    float: right;
-    box-shadow: gray 0px 0px 3px 0px;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  .product {
-    .productIntro {
-      text-align: left;
-      .productImg {
+  .intro {
+    display: flex;
+
+    .rightSide {
+      display: inline-block;
+      position: sticky;
+      top: 20px;
+      width: 300px;
+      vertical-align: top;
+      text-align: right;
+      color: #979797;
+      box-shadow: #e2e2e2 0px 0px 3px 0px;
+      border-radius: 10px;
+      padding: 35px 20px 30px;
+
+      .quantity {
+        margin-bottom: 10px;
+        font-size: 14px;
       }
 
-      .productIntroduction {
-        float: right;
+      input {
+        font-size: 13px;
+        margin-bottom: 53px;
+      }
+
+      .priceIs {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .totalPrice {
+        border: 1px #8c8c8c solid;
+        padding: 10px;
+        margin-bottom: 35px;
+        font-size: 13px;
+        align-items: center;
+      }
+
+      .deliveryFee {
+        font-size: 11px;
+        margin-bottom: 5px;
+      }
+
+      .additionalDeliveryFee {
+        font-size: 11px;
+        margin-bottom: 25px;
+      }
+
+      .freeDeliveryFee {
+        font-size: 11px;
+        margin-bottom: 15px;
+      }
+
+      .rightSideBtn {
+        text-align: center;
+        font-size: 18px;
+
+        button:nth-child(1) {
+          width: 150px;
+          height: 45px;
+          background-color: #ffb400;
+          border: 1px solid #ffb400;
+          color: white;
+          border-radius: 10px;
+          margin-bottom: 11px;
+        }
+
+        button:nth-child(2) {
+          width: 150px;
+          height: 45px;
+          background-color: #1cb100;
+          border: 1px solid #1cb100;
+          color: white;
+          border-radius: 10px;
+        }
       }
     }
 
-    .productDetails {
+    .product {
+      .productIntro {
+        display: flex;
+        justify-content: space-around;
+        padding: 0px 30px 0px 0px;
+
+        .image {
+          .productImg {
+            width: 285px;
+            height: 380px;
+            text-align: left;
+          }
+        }
+
+        .productIntroduction {
+          text-align: left;
+          margin: 0px 0px 8px 10px;
+
+          .name {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #8c8c8c;
+          }
+
+          .catchphrase {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #979797;
+          }
+
+          .hashtag {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #ffb400;
+          }
+
+          .review {
+            img {
+              margin-bottom: 5px;
+            }
+
+            a {
+              margin-bottom: 5px;
+              font-size: 14px;
+              color: #1cb100;
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+          }
+
+          .category {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #8c8c8c;
+          }
+
+          .isCaffeine {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #8c8c8c;
+          }
+
+          .volume {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #8c8c8c;
+          }
+
+          .delivery {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #e2e2e2;
+          }
+
+          .priceCategory {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #8c8c8c;
+          }
+
+          .price {
+            margin-bottom: 15px;
+            font-size: 30px;
+            color: #8c8c8c;
+          }
+
+          .expirationDate {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #1cb100;
+          }
+
+          .howToKeep {
+            font-size: 14px;
+            color: #1cb100;
+          }
+        }
+      }
     }
   }
+
+  .productDetails {
+    margin-top: 66px;
+  }
+}
+
+.review {
+  margin-top: 131px;
+  padding-bottom: 30px;
 
   .review {
+    text-align: left;
+    padding: 10px;
+    border: 20px;
+
+    .reviewBtn {
+      font-size: 12px;
+    }
+  }
+
+  .reviewSort {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+
+    button {
+      margin-right: 24px;
+      border: 0px;
+      background-color: white;
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+  }
+
+  .reviewList {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #a3d89a;
+    color: #0c4d00;
+    font-size: 13px;
+
+    .nickname {
+    }
+    .boughtWhat {
+    }
+  }
+
+  .moreReview {
+    font-size: 18px;
+    color: #1cb100;
+    text-decoration: underline;
+    text-underline-position: under;
+    border: 0px;
+    margin-top: 70px;
   }
 }
