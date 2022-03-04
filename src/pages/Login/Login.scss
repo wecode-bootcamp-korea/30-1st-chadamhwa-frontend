@@ -24,7 +24,7 @@ body {
         letter-spacing: 1.2;
       }
 
-      .detail_info {
+      .detail-info {
         width: 100%;
         height: 400px;
         line-height: 50px;
@@ -55,23 +55,15 @@ body {
             }
           }
 
-          .ok {
-            display: none;
-            text-align: center;
-            color: #f44336;
-            margin-top: -20px;
-            font-size: 0.75rem;
-            font-weight: 400;
-          }
-          .warning {
-            text-align: center;
-            color: #f44336;
-            margin-top: -20px;
-            font-size: 0.75rem;
-            font-weight: 400;
-          }
+          // .warning {
+          //   text-align: center;
+          //   color: #f44336;
+          //   margin-top: -20px;
+          //   font-size: 0.75rem;
+          //   font-weight: 400;
+          // }
 
-          .inputFail {
+          .input-fail {
             border-bottom: 2px solid #f44336;
           }
 
@@ -88,7 +80,7 @@ body {
             margin-top: 45px;
           }
 
-          .btnActive {
+          .btn-active {
             background-color: #f4bb5f;
             color: #fff;
             cursor: pointer;
@@ -96,7 +88,7 @@ body {
             border: none;
           }
 
-          .btnDie {
+          .btn-die {
             cursor: not-allowed;
           }
         }

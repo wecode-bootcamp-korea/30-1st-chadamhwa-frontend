@@ -6,17 +6,23 @@ import Footer from '../../components/Footer/Footer';
 function Login() {
   let [loginEmail, setLoginEmail] = useState('');
   let [loginPw, setLoginPw] = useState('');
-  let loginValid = loginEmail.includes('@') && loginPw.length > 7;
+  let loginValid = loginEmail.includes('@') && loginPw.length > 5;
   let validInformE = loginEmail.includes('@');
-  let validInformPw = loginPw.length > 7;
+  let validInformPw = loginPw.length > 5;
 
   function handleEmailInput(event) {
     setLoginEmail(event.target.value);
+    // validInformE
+    //   ? event.target.classList.remove('input-fail')
+    //   : event.target.classList.add('input-fail');
     console.log(event.target.value);
   }
 
   function handlePwInput(event) {
     setLoginPw(event.target.value);
+    // validInformPw
+    //   ? event.target.classList.remove('input-fail')
+    //   : event.target.classList.add('input-fail');
     console.log(event.target.value);
   }
 
@@ -47,7 +53,7 @@ function Login() {
         <div className="wrap">
           <div className="login">로그인</div>
 
-          <div className="detail_info">
+          <div className="detail-info">
             <form>
               <div className="wrap">
                 <span>이메일</span>
@@ -55,11 +61,8 @@ function Login() {
                   type="text"
                   placeholder="이메일을 입력해주세요"
                   onChange={handleEmailInput}
-                  className={validInformE ? '' : 'inputFail'}
                 />
-                <span className={validInformE ? 'ok' : 'warning'}>
-                  이메일을 입력해주세요
-                </span>
+                {/* <span>이메일을 입력해주세요</span> */}
               </div>
               <div className="wrap">
                 <span>비밀번호</span>
@@ -67,14 +70,11 @@ function Login() {
                   type="password"
                   placeholder="비밀번호를 입력해주세요"
                   onChange={handlePwInput}
-                  className={validInformPw ? '' : 'inputFail'}
                 />
-                <span className={validInformPw ? 'ok' : 'warning'}>
-                  비밀번호를 입력해주세요
-                </span>
+                {/* <span>비밀번호를 입력해주세요</span> */}
               </div>
 
-              <button className={loginValid ? 'btnActive' : 'btnDie'}>
+              <button className={loginValid ? 'btn-active' : 'btn-die'}>
                 로그인
               </button>
             </form>
