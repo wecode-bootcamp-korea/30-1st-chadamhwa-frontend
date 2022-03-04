@@ -1,19 +1,212 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
 .Detail {
+  display: flex;
+  justify-content: center;
+  position: relative;
   min-width: 960px;
   height: 976px;
-  padding: 20px 0px 250px 20px;
+  padding: 50px 0px 250px 20px;
+  text-align: center;
   font-family: 'Noto Sans KR', sans-serif;
 
-  .intro {
-    display: flex;
+  .leftSide {
+    .productIntro {
+      display: flex;
+      justify-content: space-around;
+      padding: 0px 30px 0px 0px;
+
+      .productMainImage {
+        .productImg {
+          width: 295px;
+          height: 390px;
+          text-align: left;
+          padding: 15px 20px 0px 0px;
+        }
+      }
+
+      .productIntroduction {
+        text-align: left;
+        margin: 0px 0px 8px 10px;
+
+        .name {
+          margin-bottom: 30px;
+          font-size: 20px;
+          color: #8c8c8c;
+        }
+
+        .catchphrase {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #979797;
+        }
+
+        .hashtag {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #ffb400;
+        }
+
+        .review {
+          img {
+            margin-bottom: 5px;
+          }
+
+          a {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #1cb100;
+            text-decoration: underline;
+            text-underline-position: under;
+          }
+        }
+
+        .category {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #8c8c8c;
+        }
+
+        .isCaffeine {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #8c8c8c;
+        }
+
+        .volume {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #8c8c8c;
+        }
+
+        .delivery {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #e2e2e2;
+        }
+
+        .priceCategory {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #8c8c8c;
+        }
+
+        .price {
+          margin-bottom: 15px;
+          font-size: 30px;
+          color: #8c8c8c;
+        }
+
+        .expirationDate {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #1cb100;
+        }
+
+        .howToKeep {
+          font-size: 14px;
+          color: #1cb100;
+        }
+      }
+    }
+
+    .productDetails {
+      margin-top: 66px;
+    }
+
+    .review {
+      margin-top: 100px;
+      padding-bottom: 30px;
+
+      .review {
+        text-align: left;
+        padding: 10px;
+        border: 20px;
+
+        .reviewBtn {
+          width: 75px;
+          height: 30px;
+          border: 0px;
+          border-radius: 10px;
+          padding: 1px 6px;
+          background-color: #1cb100;
+          color: white;
+          font-size: 12px;
+        }
+      }
+
+      .reviewSort {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        margin-left: 40px;
+        margin-bottom: 40px;
+
+        button {
+          margin-right: 24px;
+          border: 0px;
+          background-color: white;
+          text-decoration: underline;
+          text-underline-position: under;
+        }
+      }
+
+      .reviewList {
+        .reviewHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 45px;
+          padding: 0px 30px;
+          border-radius: 10px;
+          background-color: #a3d89a;
+          color: #0c4d00;
+          font-size: 13px;
+
+          .nickname {
+            margin: 0px 10px 0px 0px;
+          }
+
+          .boughtWhat {
+            .boughtProduct {
+              margin: 0px 10px 0px 0px;
+            }
+
+            .reviewRate {
+              margin: 0px 10px 0px 0px;
+            }
+
+            .boughtTime {
+              margin: 0px 10px 0px 0px;
+            }
+          }
+        }
+
+        .reviewComment {
+          text-align: left;
+          padding: 20px 25px;
+          font-size: 12px;
+        }
+      }
+
+      .moreReview {
+        font-size: 18px;
+        color: #1cb100;
+        text-decoration: underline;
+        text-underline-position: under;
+        border: 0px;
+        margin-top: 70px;
+        background-color: white;
+      }
+    }
+  }
+  .rightSideWrapper {
+    height: 100%;
 
     .rightSide {
-      display: inline-block;
       position: sticky;
       top: 20px;
-      width: 300px;
+      width: 280px;
       vertical-align: top;
       text-align: right;
       color: #979797;
@@ -24,6 +217,40 @@
       .quantity {
         margin-bottom: 10px;
         font-size: 14px;
+      }
+
+      .quantityCounter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 240px;
+        height: 45px;
+        padding: 0px 29px;
+        margin-bottom: 103px;
+        border: 1px #e2e2e2 solid;
+        border-radius: 10px;
+        font-size: 14px;
+
+        .decreaseQuantity {
+          color: #979797;
+          background-color: white;
+          border: 0px;
+          padding: 3px 5px 0px 5px;
+          font-size: 20px;
+        }
+
+        span {
+          font-size: 14px;
+        }
+
+        .increaseQuantity {
+          color: #1cb100;
+          background-color: white;
+          border: 0px;
+          padding: 0px 5px;
+          font-size: 30px;
+          font-weight: bold;
+        }
       }
 
       input {
@@ -37,11 +264,18 @@
       }
 
       .totalPrice {
-        border: 1px #8c8c8c solid;
+        text-align: center;
+        width: 240px;
+        height: 45px;
         padding: 10px;
         margin-bottom: 35px;
-        font-size: 13px;
-        align-items: center;
+        border: 1px #e2e2e2 solid;
+        border-radius: 10px;
+
+        .totalPrice {
+          border: 0px;
+          font-size: 13px;
+        }
       }
 
       .deliveryFee {
@@ -83,164 +317,5 @@
         }
       }
     }
-
-    .product {
-      .productIntro {
-        display: flex;
-        justify-content: space-around;
-        padding: 0px 30px 0px 0px;
-
-        .image {
-          .productImg {
-            width: 285px;
-            height: 380px;
-            text-align: left;
-          }
-        }
-
-        .productIntroduction {
-          text-align: left;
-          margin: 0px 0px 8px 10px;
-
-          .name {
-            margin-bottom: 15px;
-            font-size: 20px;
-            color: #8c8c8c;
-          }
-
-          .catchphrase {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #979797;
-          }
-
-          .hashtag {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #ffb400;
-          }
-
-          .review {
-            img {
-              margin-bottom: 5px;
-            }
-
-            a {
-              margin-bottom: 5px;
-              font-size: 14px;
-              color: #1cb100;
-              text-decoration: underline;
-              text-underline-position: under;
-            }
-          }
-
-          .category {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #8c8c8c;
-          }
-
-          .isCaffeine {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #8c8c8c;
-          }
-
-          .volume {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #8c8c8c;
-          }
-
-          .delivery {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #e2e2e2;
-          }
-
-          .priceCategory {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #8c8c8c;
-          }
-
-          .price {
-            margin-bottom: 15px;
-            font-size: 30px;
-            color: #8c8c8c;
-          }
-
-          .expirationDate {
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #1cb100;
-          }
-
-          .howToKeep {
-            font-size: 14px;
-            color: #1cb100;
-          }
-        }
-      }
-    }
-  }
-
-  .productDetails {
-    margin-top: 66px;
-  }
-}
-
-.review {
-  margin-top: 131px;
-  padding-bottom: 30px;
-
-  .review {
-    text-align: left;
-    padding: 10px;
-    border: 20px;
-
-    .reviewBtn {
-      font-size: 12px;
-    }
-  }
-
-  .reviewSort {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 12px;
-    margin-left: 40px;
-    margin-bottom: 40px;
-
-    button {
-      margin-right: 24px;
-      border: 0px;
-      background-color: white;
-      text-decoration: underline;
-      text-underline-position: under;
-    }
-  }
-
-  .reviewList {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #a3d89a;
-    color: #0c4d00;
-    font-size: 13px;
-
-    .nickname {
-    }
-    .boughtWhat {
-    }
-  }
-
-  .moreReview {
-    font-size: 18px;
-    color: #1cb100;
-    text-decoration: underline;
-    text-underline-position: under;
-    border: 0px;
-    margin-top: 70px;
   }
 }
