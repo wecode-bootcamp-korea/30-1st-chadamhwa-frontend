@@ -5,14 +5,49 @@ import React, { useState, useEffect } from 'react';
 import './Products.scss';
 
 function Products() {
-  const [isCaffein, setIsCaffein] = useState(true);
-  const [productsList, setProductsList] = useState([]);
+  const [categoriesList, setCategoriesList] = useState([
+    '뿌리차',
+    '과일차',
+    '견과류차',
+    '잎차',
+  ]);
+  const [isCaffeine, setIsCaffeine] = useState(false);
+  const [isDecaffeine, setIsDecaffeine] = useState(false);
+  // const [productsList, setProductsList] = useState([]);
 
   // useEffect(() => {
-  //   fetch('http://localhost:3000')
+  //   fetch('http://10.58.2.110:8000/damhwamarket/test')
   //     .then(res => res.json())
-  //     .then();
+  //     .then(data => setCategoriesList(data.message));
   // }, []);
+
+  function activeBtn({ target }) {
+    target.classList.contains('active-btn')
+      ? target.classList.remove('active-btn')
+      : target.classList.add('active-btn');
+  }
+
+  function activeBtnCaffeine({ target }) {
+    target.classList.contains('caffeine')
+      ? caffeineToggler(true, isDecaffeine)
+      : caffeineToggler(false, isCaffeine);
+  }
+
+  function caffeineToggler(caffeine, toggle) {
+    if (caffeine) {
+      if (isDecaffeine == true) {
+        setIsDecaffeine(!isDecaffeine);
+        setIsCaffeine(!isCaffeine);
+      }
+      setIsCaffeine(!isCaffeine);
+    } else {
+      if (isCaffeine == true) {
+        setIsCaffeine(!isCaffeine);
+        setIsDecaffeine(!isDecaffeine);
+      }
+      setIsDecaffeine(!isDecaffeine);
+    }
+  }
 
   return (
     <>
@@ -29,28 +64,29 @@ function Products() {
             <div className="filters">
               <div className="filter-categories">
                 <div className="filter-title">차 종</div>
-                <button className="filter-btn">뿌리차</button>
-                <button className="filter-btn">견과류차</button>
-                <button className="filter-btn">꽃잎차</button>
-                <button className="filter-btn">과일차</button>
+                {categoriesList.map((category, idx) => (
+                  <button key={idx} className="filter-btn" onClick={activeBtn}>
+                    {category}
+                  </button>
+                ))}
               </div>
-              <div className="filter-caffein">
+              <div className="filter-caffeine">
                 <div className="filter-title">카페인</div>
                 <button
-                  className={`filter-btn ${isCaffein ? 'active-btn' : ''}`}
-                  onClick={() => {
-                    isCaffein || setIsCaffein(true);
-                  }}
+                  className={`filter-btn caffeine ${
+                    isCaffeine ? 'active-btn' : ''
+                  }`}
+                  onClick={activeBtnCaffeine}
                 >
-                  유
+                  카페인
                 </button>
                 <button
-                  className={`filter-btn ${isCaffein ? '' : 'active-btn'}`}
-                  onClick={() => {
-                    isCaffein && setIsCaffein(false);
-                  }}
+                  className={`filter-btn decaffeine ${
+                    isDecaffeine ? 'active-btn' : ''
+                  }`}
+                  onClick={activeBtnCaffeine}
                 >
-                  무
+                  디카페인
                 </button>
               </div>
               <div className="filter-price">

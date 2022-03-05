@@ -6,13 +6,16 @@
   cursor: pointer;
   color: $grey-light;
 }
+
+//공통으로 빠질 부분
 $grey-heavy: rgb(62, 62, 62);
 $grey-medium: rgb(112, 112, 112);
 $grey-light: rgb(178, 178, 178);
+$maintheme-butter: #f4bb5f;
 
 .main {
   .wrapper {
-    margin: 0 auto;
+    margin: 120px auto 0;
     padding: 20 0 250 0;
     width: 1100px;
 
@@ -53,9 +56,12 @@ $grey-light: rgb(178, 178, 178);
           .filter-btn {
             @include filter-btn();
           }
+          .active-btn {
+            color: $maintheme-butter;
+          }
         }
 
-        .filter-caffein {
+        .filter-caffeine {
           display: flex;
           height: 30px;
           margin-bottom: 10px;
@@ -64,7 +70,7 @@ $grey-light: rgb(178, 178, 178);
             @include filter-btn();
           }
           .active-btn {
-            color: rgb(81, 151, 242);
+            color: $maintheme-butter;
           }
         }
 
