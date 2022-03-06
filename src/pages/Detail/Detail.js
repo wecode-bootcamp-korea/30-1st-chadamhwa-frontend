@@ -62,46 +62,7 @@ function Detail() {
             />
           </div>
           <div className="productIntroduction">
-            <ul>
-              {introList}
-              {/* <li className="name">
-                <span>하동 녹차</span>
-              </li>
-              <li className="catchphrase">
-                <span>차 한 잔으로 편안함과 차분함을 얻을 수 있어요!</span>
-              </li>
-              <li className="hashtag">
-                <span>#진한 녹차 향 #은은한 단 맛 </span>
-              </li>
-              <li className="review">
-                <img src="#" alt="Product rate" />
-                <a href="#reviewInDetail">[123 리뷰]</a>
-              </li>
-              <li className="category">
-                <span>주종: 약주</span>
-              </li>
-              <li className="isCaffeine">
-                <span>카페인: 카페인</span>
-              </li>
-              <li className="volume">
-                <span>용량: 500ml</span>
-              </li>
-              <li className="delivery">
-                <span>배송기간: 2일 이내 배송</span>
-              </li>
-              <li className="priceCategory">
-                <span>판매가격:</span>
-              </li>
-              <li className="price">
-                <span>24,000원</span>
-              </li>
-              <li className="expirationDate">
-                <span>유통기한: 별도 표기</span>
-              </li>
-              <li className="howToKeep">
-                <span>보관방법: 냉장 보관</span>
-              </li> */}
-            </ul>
+            <ul>{introList}</ul>
           </div>
         </section>
         <div className="productDetails">
