@@ -23,6 +23,8 @@ function Section(props) {
               img="/images/product1.JPG"
               name="허니비 차"
               price="8,000원"
+              rate="4.7"
+              review="5"
             />
 
             <Wrap
@@ -30,6 +32,8 @@ function Section(props) {
               img="/images/product2.JPG"
               name="구름 버블티"
               price="10,000원"
+              rate="4.9"
+              review="8"
             />
 
             <Wrap
@@ -37,6 +41,8 @@ function Section(props) {
               img="/images/product3.JPG"
               name="수줍은 홍티"
               price="6,000원"
+              rate="4.5"
+              review="3"
             />
 
             <Wrap
@@ -44,6 +50,8 @@ function Section(props) {
               img="/images/product4.JPG"
               name="보라달빛 차"
               price="9,000원"
+              rate="5.0"
+              review="13"
             />
           </div>
           <a href="/">
