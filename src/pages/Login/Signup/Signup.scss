@@ -1,0 +1,88 @@
+h1.title {
+  font-size: 18px;
+  color: #f4bb5f;
+  margin: 0 0 70px;
+  font-weight: bold;
+}
+img.id-card {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span.key {
+    font-size: 16px;
+    color: #f4bb5f;
+    margin: 0 0 20px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 300px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #606060;
+    margin: 0 0 20px;
+
+    &::placeholder {
+      text-align: center;
+      padding: 6px 0 7px;
+      font-size: 16px;
+    }
+  }
+
+  select {
+    width: 300px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #606060;
+    font-size: 16px;
+    color: #606060;
+    text-align: center;
+    padding: 6px 24px 7px 0;
+    margin: 0 0 20px;
+  }
+
+  span.necessity {
+    color: #b2b2b2;
+    font-weight: bold;
+    margin: 20px 0;
+    line-height: 2;
+  }
+  span.blue {
+    color: #5197f2;
+    font-weight: bold;
+  }
+
+  span.option {
+    color: #707070;
+    margin: 0 10px 0 0;
+  }
+  span.mild {
+    color: #b2b2b2;
+    margin: 0 0 0 10px;
+  }
+  input.check {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+
+  button {
+    width: 150px;
+    height: 45px;
+    background-color: transparent;
+    color: #b2b2b2;
+    padding: 1px 6px;
+    border-radius: 10px;
+    border: 1px solid #b2b2b2;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 40px 0;
+  }
+}
