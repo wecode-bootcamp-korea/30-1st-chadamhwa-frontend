@@ -43,7 +43,7 @@ function Detail() {
             <button>평점 높은 순</button>
             <button>평점 낮은 순</button>
           </section>
-          <ReviewList ReviewList={ReviewList} />
+          <ReviewList />
           <button className="moreReview">더 많은 리뷰</button>
         </div>
       </div>
