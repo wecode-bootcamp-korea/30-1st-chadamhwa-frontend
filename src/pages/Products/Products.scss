@@ -80,6 +80,11 @@ $maintheme-butter: #f4bb5f;
           margin-bottom: 10px;
         }
       }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 8px;
+      }
     }
   }
 }

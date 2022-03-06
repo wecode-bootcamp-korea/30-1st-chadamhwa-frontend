@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Nav from '../../components/Nav/Nav';
 // import Subnav from '../../components/Subnav/Subnav';
 // import Footer from '../../components/Footer/Footer';
+import Product from './Product';
 import './Products.scss';
 
 function Products() {
@@ -11,6 +12,9 @@ function Products() {
     '견과류차',
     '잎차',
   ]);
+
+  const [productsList, setProductsList] = useState([]);
+
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
   // const [productsList, setProductsList] = useState([]);
@@ -20,6 +24,12 @@ function Products() {
   //     .then(res => res.json())
   //     .then(data => setCategoriesList(data.message));
   // }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/data.json')
+      .then(res => res.json())
+      .then(data => setProductsList(data));
+  }, []);
 
   function activeBtn({ target }) {
     target.classList.contains('active-btn')
@@ -35,13 +45,13 @@ function Products() {
 
   function caffeineToggler(caffeine, toggle) {
     if (caffeine) {
-      if (isDecaffeine == true) {
+      if (isDecaffeine === true) {
         setIsDecaffeine(!isDecaffeine);
         setIsCaffeine(!isCaffeine);
       }
       setIsCaffeine(!isCaffeine);
     } else {
-      if (isCaffeine == true) {
+      if (isCaffeine === true) {
         setIsCaffeine(!isCaffeine);
         setIsDecaffeine(!isDecaffeine);
       }
@@ -96,7 +106,20 @@ function Products() {
                 </div>
               </div>
             </div>
-            <div className="contents" />
+            <div className="products">
+              {productsList.map((product, idx) => {
+                return (
+                  <Product
+                    key={product.id}
+                    name={product.name}
+                    img={product.img}
+                    price={product.price}
+                    rating={product.rating}
+                    review={product.review}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </main>
