@@ -9,7 +9,7 @@ function Detail() {
     setQuantity(quantity => quantity + 1);
   };
   const decreaseQuantity = () => {
-    setQuantity(quantity => quantity - 1);
+    quantity > 1 ? setQuantity(quantity => quantity - 1) : setQuantity(1);
   };
 
   const totalPrice = price * quantity;
@@ -103,8 +103,15 @@ function Detail() {
             </li>
             <li>
               <div className="quantityCounter">
-                <button className="decreaseQuantity" onClick={decreaseQuantity}>
-                  ➖
+                <button
+                  className={` ${
+                    quantity > 1
+                      ? 'ableDecreaseQuantity'
+                      : 'unableDecreaseQuantity'
+                  }`}
+                  onClick={decreaseQuantity}
+                >
+                  −
                 </button>
                 <span>{quantity}</span>
                 <button className="increaseQuantity" onClick={increaseQuantity}>

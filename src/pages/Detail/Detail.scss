@@ -231,12 +231,22 @@
         border-radius: 10px;
         font-size: 14px;
 
-        .decreaseQuantity {
+        .unableDecreaseQuantity {
           color: #979797;
           background-color: white;
           border: 0px;
           padding: 3px 5px 0px 5px;
-          font-size: 20px;
+          font-size: 25px;
+          font-weight: 900;
+        }
+
+        .ableDecreaseQuantity {
+          color: #1cb100;
+          background-color: white;
+          border: 0px;
+          padding: 3px 5px 0px 5px;
+          font-size: 25px;
+          font-weight: 900;
         }
 
         span {
