@@ -12,6 +12,7 @@ function Main() {
   //     .then(res => res.json());
   //     .then(data => setata));
   // }, []);
+
   return (
     <>
       {/* <Nav /> */}

@@ -5,7 +5,7 @@ function Wrap(props) {
   return (
     <div className="wrap">
       <div className="img-box">
-        <img className="items" src={props.img} />
+        <img className="items" src={props.img} alt="" />
       </div>
       <div className="txt-box">
         <span className="product-name">{props.name}</span>
