@@ -96,5 +96,17 @@
       font-weight: bold;
       margin: 40px 0;
     }
+
+    .btn-active {
+      background-color: #f4bb5f;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+    }
+
+    .btn-die {
+      cursor: not-allowed;
+    }
   }
 }

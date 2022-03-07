@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import './Signup.scss';
 
-
 function Signup() {
   const [signupEmail, setSignUpEmail] = useState('');
   const [signupPw, setSignUpPw] = useState('');
-  const SignupValid 
+  let SignupValid = signupEmail.includes('@') && signupPw.length > 5;
 
-  function mainCondition(event){
+  function mainCondition(event) {
     event.preventDefault();
-    
   }
 
   function joinClient() {
@@ -71,7 +69,12 @@ function Signup() {
             <input className="check" type="checkbox" />
           </span>
         </div>
-        <button onClick={mainCondition}>가입완료</button>
+        <button
+          onClick={mainCondition}
+          className={loginValid ? 'btn-active' : 'btn-die'}
+        >
+          가입완료
+        </button>
       </form>
     </div>
   );
