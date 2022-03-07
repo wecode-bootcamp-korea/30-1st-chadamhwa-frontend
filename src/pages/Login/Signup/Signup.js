@@ -54,7 +54,7 @@ function Signup() {
   return (
     <div className="sign-up">
       <h1 className="title"> 회원 가입 </h1>
-      <img className="id-card" src="/images/id-card.png" />
+      <img className="id-card" src="/images/id-card.png" alt="id-card" />
       <form>
         <div className="wrap">
           <span className="key">이름</span>
