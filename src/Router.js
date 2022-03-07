@@ -5,6 +5,7 @@ import Login from './pages/Login/Login';
 import Detail from './pages/Detail/Detail';
 import Event from './pages/Event/Event';
 import Cart from './pages/Cart/Cart';
+import Signup from './pages/Login/Signup/Signup';
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
         <Route path="/event" element={<Event />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );

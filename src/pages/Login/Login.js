@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import Signup from './Signup/Signup';
 import './Login.scss';
 import Nav from '../../components/Nav/Nav';
@@ -8,44 +9,36 @@ function Login() {
   let [loginEmail, setLoginEmail] = useState('');
   let [loginPw, setLoginPw] = useState('');
   let loginValid = loginEmail.includes('@') && loginPw.length > 5;
-  // let validInformE = loginEmail.includes('@');
-  // let validInformPw = loginPw.length > 5;
+  const navigate = useNavigate();
 
   function handleEmailInput(event) {
     setLoginEmail(event.target.value);
-    // validInformE
-    //   ? event.target.classList.remove('input-fail')
-    //   : event.target.classList.add('input-fail');
     console.log(event.target.value);
   }
 
   function handlePwInput(event) {
     setLoginPw(event.target.value);
-    // validInformPw
-    //   ? event.target.classList.remove('input-fail')
-    //   : event.target.classList.add('input-fail');
     console.log(event.target.value);
   }
 
-  function handleLoginJoin(event) {}
   function mainCondition(event) {
     event.preventDefault();
-    // fetch('', {
-    //   method: 'post',
-    //   body: JSON.stringify({
-    //     email: loginId,
-    //     password: loginPw,
-    //   }),
-    // })
-    //   .then(response => response.json())
-    //   .then(result => {
-    //     if (result.message === 'SUCCESS') {
-    //       alert('환영합니다!');
-    //       navigate('/');
-    //     } else {
-    //       loginValid ? ''
-    //     }
-    //   });
+    fetch('http://10.58.0.92:8000/users/signin', {
+      method: 'post',
+      body: JSON.stringify({
+        email: loginEmail,
+        password: loginPw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          alert('환영합니다!');
+          navigate('/');
+        } else {
+          alert('입력을 확인해주세요!');
+        }
+      });
   }
 
   return (
@@ -89,13 +82,12 @@ function Login() {
             <div className="wrap">
               <a href="#">아이디 찾기</a>
               <a href="#">비밀번호 찾기</a>
-              <a href="#" onClick={handleLoginJoin}>
-                회원가입(+ 100,000P)
-              </a>
+              <a href="#">회원가입(+ 100,000P)</a>
             </div>
           </div>
         </div>
       </section>
+      <Signup />
       {/* <Footer /> */}
     </>
   );
