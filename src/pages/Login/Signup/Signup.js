@@ -15,7 +15,8 @@ function Signup() {
     signupEmail.includes('@') &&
     signupPw.length > 5 &&
     signupPw === signupRePw &&
-    signupName.length > 1;
+    signupName.length > 1 &&
+    signupAddress.length > 1;
 
   function mainCondition(event) {
     event.preventDefault();

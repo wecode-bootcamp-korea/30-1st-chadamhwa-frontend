@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import Signup from './Signup/Signup';
 import './Login.scss';
 // import Nav from '../../components/Nav/Nav';
 // import Footer from '../../components/Footer/Footer';
@@ -57,7 +56,6 @@ function Login() {
                   placeholder="이메일을 입력해주세요"
                   onChange={handleEmailInput}
                 />
-                {/* <span>이메일을 입력해주세요</span> */}
               </div>
               <div className="wrap">
                 <span>비밀번호</span>
@@ -66,7 +64,6 @@ function Login() {
                   placeholder="비밀번호를 입력해주세요"
                   onChange={handlePwInput}
                 />
-                {/* <span>비밀번호를 입력해주세요</span> */}
               </div>
 
               <button
@@ -80,9 +77,9 @@ function Login() {
 
           <div className="search">
             <div className="wrap">
-              <a href="#">아이디 찾기</a>
-              <a href="#">비밀번호 찾기</a>
-              <div onClick={navigate('/signup')}>회원가입(+ 100,000P)</div>
+              <a>아이디 찾기</a>
+              <a>비밀번호 찾기</a>
+              <a href="/signup">회원가입(+ 100,000P)</a>
             </div>
           </div>
         </div>
