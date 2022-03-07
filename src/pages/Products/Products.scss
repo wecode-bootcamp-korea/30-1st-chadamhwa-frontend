@@ -48,7 +48,8 @@ $maintheme-butter: #f4bb5f;
 
       .filters {
         font-size: 12px;
-        .filter-categories {
+        padding: 0 8px;
+        .filter-categoriesBox {
           display: flex;
           height: 30px;
           margin-bottom: 10px;
@@ -61,7 +62,7 @@ $maintheme-butter: #f4bb5f;
           }
         }
 
-        .filter-caffeine {
+        .filter-caffeineBox {
           display: flex;
           height: 30px;
           margin-bottom: 10px;
@@ -74,10 +75,18 @@ $maintheme-butter: #f4bb5f;
           }
         }
 
-        .filter-price {
+        .filter-priceBox {
           display: flex;
           height: 30px;
           margin-bottom: 10px;
+          justify-content: space-between;
+
+          .filter-price {
+            display: flex;
+          }
+
+          .filter-sortby {
+          }
         }
       }
       .products {

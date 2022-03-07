@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import Nav from '../../components/Nav/Nav';
-// import Subnav from '../../components/Subnav/Subnav';
-// import Footer from '../../components/Footer/Footer';
-import Product from './Product';
+import Subnav from '../../components/Subnav/Subnav';
+// import Product from './Product';
+
 import './Products.scss';
 
 function Products() {
@@ -12,12 +11,10 @@ function Products() {
     '견과류차',
     '잎차',
   ]);
-
   const [productsList, setProductsList] = useState([]);
 
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
-  // const [productsList, setProductsList] = useState([]);
 
   // useEffect(() => {
   //   fetch('http://10.58.2.110:8000/damhwamarket/test')
@@ -61,8 +58,7 @@ function Products() {
 
   return (
     <>
-      {/* <Nav /> */}
-      {/* <Subnav /> */}
+      <Subnav />
       <main className="main">
         <div className="wrapper">
           <div className="banner">
@@ -72,7 +68,7 @@ function Products() {
           <div className="sub-title">차담화가 자신있게 선보입니다.</div>
           <div className="contents-wrapper">
             <div className="filters">
-              <div className="filter-categories">
+              <div className="filter-categoriesBox">
                 <div className="filter-title">차 종</div>
                 {categoriesList.map((category, idx) => (
                   <button key={idx} className="filter-btn" onClick={activeBtn}>
@@ -80,7 +76,7 @@ function Products() {
                   </button>
                 ))}
               </div>
-              <div className="filter-caffeine">
+              <div className="filter-caffeineBox">
                 <div className="filter-title">카페인</div>
                 <button
                   className={`filter-btn caffeine ${
@@ -99,33 +95,38 @@ function Products() {
                   디카페인
                 </button>
               </div>
-              <div className="filter-price">
-                <div className="filter-title">가 격</div>
-                <div className="slider-wrapper">
-                  <input type="range" />
+              <div className="filter-priceBox">
+                <div className="filter-price">
+                  <div className="filter-title">가 격</div>
+                  <div className="slider-wrapper">
+                    <input type="range" />
+                  </div>
                 </div>
+                <select className="filter-sortby">
+                  <option value="">최신순</option>
+                  <option value="">오래된순</option>
+                  <option value="">리뷰순</option>
+                </select>
               </div>
             </div>
             <div className="products">
               {productsList.map((product, idx) => {
-                console.log('product');
-                return (
-                  <Product
-                    key={product.id}
-                    // data={product}
-                    name={product.name}
-                    img={product.img}
-                    price={product.price}
-                    rating={product.rating}
-                    review={product.review}
-                  />
-                );
+                // return (
+                //   <Product
+                //     key={product.id}
+                //     // data={product}
+                //     name={product.name}
+                //     img={product.img}
+                //     price={product.price}
+                //     rating={product.rating}
+                //     review={product.review}
+                //   />
+                // );
               })}
             </div>
           </div>
         </div>
       </main>
-      {/* <Footer /> */}
     </>
   );
 }
