@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import introList from './IntroList';
 import ReviewList from './ReviewList';
 import './Detail.scss';
 
 function Detail() {
   const [quantity, setQuantity] = useState(1);
+  const [reviewData, setReviewData] = useState([]);
+  const [order, setOrder] = useState('createdAt');
   const price = 24000;
 
   const increaseQuantity = () => {
@@ -15,6 +17,30 @@ function Detail() {
   };
 
   const totalPrice = price * quantity;
+
+  useEffect(() => {
+    fetch('/data/reviewData.json')
+      .then(res => res.json())
+      .then(data => {
+        setReviewData(data);
+      });
+  }, []);
+
+  const handleNewestClick = () => {
+    setOrder('createdAt');
+  };
+
+  const handleBestClick = () => {
+    setOrder('reviewRate');
+  };
+
+  const handleWorstClick = () => {
+    setOrder('reviewRate');
+  };
+
+  const sortedReviewData = reviewData.sort((a, b) => {
+    return a.order - b.order;
+  });
 
   return (
     <div className="detail">
@@ -39,11 +65,11 @@ function Detail() {
             <button className="reviewBtn">리뷰</button>
           </div>
           <section className="reviewSort">
-            <button>최신순</button>
-            <button>평점 높은 순</button>
-            <button>평점 낮은 순</button>
+            <button onClick={handleNewestClick}>최신순</button>
+            <button onClick={handleBestClick}>평점 높은 순</button>
+            <button onClick={handleWorstClick}>평점 낮은 순</button>
           </section>
-          <ReviewList />
+          <ReviewList reviewData={sortedReviewData} />
           <button className="moreReview">더 많은 리뷰</button>
         </div>
       </div>
