@@ -3,6 +3,15 @@ import { useEffect } from 'react';
 import './Signup.scss';
 
 function Signup() {
+  function joinClient() {
+    fetch('', {
+      method: 'post',
+      body: JSON.stringify({
+        email: loginEmail,
+        password: loginPw,
+      }),})
+    });
+  }
   return (
     <>
       <h1 className="title"> 회원 가입 </h1>

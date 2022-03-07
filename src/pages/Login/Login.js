@@ -82,7 +82,7 @@ function Login() {
             <div className="wrap">
               <a href="#">아이디 찾기</a>
               <a href="#">비밀번호 찾기</a>
-              <a href="#">회원가입(+ 100,000P)</a>
+              <div onClick={navigate('/signup')}>회원가입(+ 100,000P)</div>
             </div>
           </div>
         </div>
