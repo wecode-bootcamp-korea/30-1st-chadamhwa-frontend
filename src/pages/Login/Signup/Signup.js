@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import './Signup.scss';
 
+
 function Signup() {
+  const [signupEmail, setSignUpEmail] = useState('');
+  const [signupPw, setSignUpPw] = useState('');
+  const SignupValid 
+
+  function mainCondition(event){
+    event.preventDefault();
+    
+  }
+
   function joinClient() {
     fetch('', {
       method: 'post',
       body: JSON.stringify({
-        email: loginEmail,
-        password: loginPw,
-      }),})
+        email: signupEmail,
+        password: signupPw,
+      }),
     });
   }
   return (
-    <>
+    <div className="sign-up">
       <h1 className="title"> 회원 가입 </h1>
       <img className="id-card" src="/images/id-card.png" />
       <form>
@@ -61,9 +71,9 @@ function Signup() {
             <input className="check" type="checkbox" />
           </span>
         </div>
-        <button>가입완료</button>
+        <button onClick={mainCondition}>가입완료</button>
       </form>
-    </>
+    </div>
   );
 }
 

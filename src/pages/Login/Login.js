@@ -87,7 +87,6 @@ function Login() {
           </div>
         </div>
       </section>
-      <Signup />
       {/* <Footer /> */}
     </>
   );
