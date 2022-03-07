@@ -6,7 +6,7 @@ function Section(props) {
   return (
     <section className="section">
       <div className="inner">
-        <img src={props.img} />
+        <img src={props.img} alt="themaimg" />
         <span className="propose">{props.span}</span>
         <p className="recommend">{props.p}</p>
         <div className="more-btn">
