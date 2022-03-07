@@ -108,9 +108,11 @@ function Products() {
             </div>
             <div className="products">
               {productsList.map((product, idx) => {
+                console.log('product');
                 return (
                   <Product
                     key={product.id}
+                    // data={product}
                     name={product.name}
                     img={product.img}
                     price={product.price}
