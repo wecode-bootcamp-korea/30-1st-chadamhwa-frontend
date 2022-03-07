@@ -5,10 +5,18 @@ import './Signup.scss';
 function Signup() {
   const [signupEmail, setSignUpEmail] = useState('');
   const [signupPw, setSignUpPw] = useState('');
-  let SignupValid = signupEmail.includes('@') && signupPw.length > 5;
+  const [signupRePw, setSignUpRePw] = useState('');
+  let SignupValid =
+    signupEmail.includes('@') && signupPw.length > 5 && signupPw === signupRePw;
 
   function mainCondition(event) {
     event.preventDefault();
+  }
+  function handleInputEmail(event) {
+    setSignUpEmail(event.target.value);
+  }
+  function handleInputPw(event) {
+    setSignUpPw(event.target.value);
   }
 
   function joinClient() {
@@ -27,16 +35,27 @@ function Signup() {
       <form>
         <div className="wrap">
           <span className="key">이메일</span>
-          <input type="text" placeholder="이메일을 입력해주세요" />
+          <input
+            type="text"
+            onChange={handleInputEmail}
+            placeholder="이메일을 입력해주세요"
+          />
         </div>
         <div className="wrap">
           <span className="key">비밀번호</span>
-          <input type="password" placeholder="비밀번호를 입력해주세요" />
+          <input
+            type="password"
+            onChange={handleInputPw}
+            placeholder="비밀번호를 입력해주세요"
+          />
         </div>
         <div className="wrap">
           <span className="key">비밀번호 확인</span>
           <input
             type="password"
+            onChange={({ target }) => {
+              setSignUpRePw(target.value);
+            }}
             placeholder="비밀번호를 한번 더 입력해주세요"
           />
         </div>
@@ -71,7 +90,7 @@ function Signup() {
         </div>
         <button
           onClick={mainCondition}
-          className={loginValid ? 'btn-active' : 'btn-die'}
+          className={SignupValid ? 'btn-active' : 'btn-die'}
         >
           가입완료
         </button>

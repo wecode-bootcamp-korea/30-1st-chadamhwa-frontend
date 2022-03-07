@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import Signup from './Signup/Signup';
 import './Login.scss';
-import Nav from '../../components/Nav/Nav';
-import Footer from '../../components/Footer/Footer';
+// import Nav from '../../components/Nav/Nav';
+// import Footer from '../../components/Footer/Footer';
 
 function Login() {
   let [loginEmail, setLoginEmail] = useState('');
