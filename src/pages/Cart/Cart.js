@@ -1,7 +1,12 @@
 import React from 'react';
+import { Navigate, useNavigate } from 'react-router';
 import './Cart.scss';
 
 function Cart() {
+  const navigate = useNavigate('');
+  function handleClick() {
+    navigate('/');
+  }
   return (
     <div className="wrap">
       <div className="cart-banner">
@@ -10,7 +15,7 @@ function Cart() {
 
       <div className="top">
         <h2>MY CART</h2>
-        <button>⇇ Continue shopping</button>
+        <button onClick={handleClick}>⇇ Continue shopping</button>
       </div>
 
       <table className="table">
