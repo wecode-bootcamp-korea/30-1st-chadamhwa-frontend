@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router';
 import './Cart.scss';
 
 function Cart() {
+  let [productName, setProductName] = useState('');
+  let [price, setPrice] = useState(0);
+  let [quantity, setQuantity] = useState(0);
+  let [amount, setAmount] = useState(0);
   const navigate = useNavigate('');
+
   function handleClick() {
     navigate('/');
   }
@@ -26,10 +31,10 @@ function Cart() {
           <th>총액</th>
         </tr>
         <tr className="tbody">
-          <td>으라차차</td>
-          <td>8,000 원</td>
-          <td>2</td>
-          <td>16000원</td>
+          <td>{setProductName}</td>
+          <td>{setPrice}</td>
+          <td>{setQuantity}</td>
+          <td>{setAmount}}</td>
         </tr>
         <tr className="tbody">
           <td>다함께 차차차</td>
