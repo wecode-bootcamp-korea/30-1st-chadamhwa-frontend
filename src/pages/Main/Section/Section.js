@@ -18,7 +18,6 @@ function Section(props) {
             <i className="fa fa-chevron-left" aria-hidden="true" />
           </a>
           <div className="product-box">
-            {/* {props.list.map} */}
             <Wrap
               className="wrap"
               img="/images/product1.JPG"
