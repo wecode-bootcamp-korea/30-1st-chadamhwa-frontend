@@ -5,19 +5,32 @@ import Footer from '../../components/Footer/Footer';
 import Subnav from '../../components/Subnav/Subnav';
 import Figure from './Figure/Figure';
 import Section from './Section/Section';
+import { Navigate, useNavigate } from 'react-router';
 
 function Main() {
+  const navigate = useNavigate('');
   // useEffect(() => {
   //   fetch('http://localhost:3000/data/data.json')
   //     .then(res => res.json());
   //     .then(data => setata));
   // }, []);
-
+  function handleClick() {
+    navigate('/cart');
+  }
   return (
     <>
       {/* <Nav /> */}
       {/* <Subnav /> */}
       <Figure />
+
+      <button onClick={handleClick} className="cart-bar">
+        <img
+          className="cart"
+          src="/images/shopping-cart.png"
+          alt="shopping-cart"
+        />
+      </button>
+
       <Section
         img="/images/sommelier.png"
         span='"어떤 차를 마실지 고민이라면, 이 차는 어때요 ?"'
