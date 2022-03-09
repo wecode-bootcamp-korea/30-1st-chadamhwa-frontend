@@ -9,7 +9,7 @@ import { Navigate, useNavigate } from 'react-router';
 
 function Main() {
   const navigate = useNavigate('');
-  const [teaData, setTeaData] = useState({});
+  const [teaData, setTeaData] = useState([]);
   useEffect(() => {
     fetch('http://localhost:3000/data/tea.json')
       .then(res => res.json())

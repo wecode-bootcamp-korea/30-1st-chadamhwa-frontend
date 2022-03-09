@@ -22,11 +22,11 @@ function Section(props) {
               <div className="product-box" key={idx}>
                 <Wrap
                   className="wrap"
-                  img={props.list.ele[idx].img}
-                  name={props.list.ele[idx].name}
-                  price={props.list.ele[idx].price}
-                  rate={props.list.ele[idx].rate}
-                  review={props.list.ele[idx].review}
+                  img={ele[idx].img}
+                  name={ele[idx].name}
+                  price={ele[idx].price}
+                  rate={ele[idx].rate}
+                  review={ele[idx].review}
                 />
                 {/* <Wrap
                   className="wrap"
