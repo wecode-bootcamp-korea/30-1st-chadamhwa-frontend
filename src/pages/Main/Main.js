@@ -24,7 +24,7 @@ function Main() {
       {/* <Subnav /> */}
       <Figure />
 
-      <button onClick={handleClick} className="cart-bar">
+      {/* <button onClick={handleClick} className="cart-bar">
         <img
           className="cart"
           src="/images/shopping-cart.png"

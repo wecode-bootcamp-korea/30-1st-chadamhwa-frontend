@@ -72,6 +72,11 @@
     transform: translateX(-300%);
     animation: slide04 20s infinite;
   }
+
+  [id='slide05']:checked ~ .slide-list .slide-item {
+    transform: translateX(-400%);
+    animation: slide05 20s infinite;
+  }
 }
 
 @keyframes slide01 {

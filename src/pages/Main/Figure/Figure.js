@@ -11,7 +11,7 @@ function Figure() {
       <ul className="slide-list">
         <li className="slide-item">
           <a>
-            <label for="slide04" className="prev" />
+            <label for="slide05" className="prev" />
             <img src="/images/banner4.png" alt="event banner" />
             <label for="slide02" className="next" />
           </a>
