@@ -22,14 +22,13 @@ function Section(props) {
               <div className="product-box" key={idx}>
                 <Wrap
                   className="wrap"
-                  img={ele[idx].img}
-                  name={ele[idx].name}
-                  price={ele[idx].price}
-                  rate={ele[idx].rate}
-                  review={ele[idx].review}
+                  img={props.list.ele[idx].img}
+                  name={props.list.ele[idx].name}
+                  price={props.list.ele[idx].price}
+                  rate={props.list.ele[idx].rate}
+                  review={props.list.ele[idx].review}
                 />
-
-                <Wrap
+                {/* <Wrap
                   className="wrap"
                   img="/images/product2.JPG"
                   name="구름 버블티"
@@ -53,10 +52,11 @@ function Section(props) {
                   name="보라달빛 차"
                   price="9,000원"
                   rate="5.0"
-                  review="13"
-                />
+                  review="13" */}
+                {/* /> */}
               </div>
             );
+            console.log(props.list);
           })}
           <a href="/">
             <i className="fa fa-chevron-right" aria-hidden="true" />
