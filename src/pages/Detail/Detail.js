@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import Nav from '../../components/Nav/Nav';
 import SubNav from '../../components/Subnav/Subnav';
-import introList from './IntroList';
+import Intro from './Intro';
 import ReviewList from './ReviewList';
-import Footer from '../../components/Footer/Footer';
 import './Detail.scss';
 
 function Detail() {
   const [quantity, setQuantity] = useState(1);
+  const [productData, setProductData] = useState([]);
   const [reviewData, setReviewData] = useState([]);
   const [rate, setRate] = useState(0);
   const [comment, setComment] = useState('');
-  const price = 24000;
+  const price = productData[0].price;
 
   useEffect(() => {
-    fetch('http://10.58.0.92:8000/reviews/comments/1')
+    fetch('http://10.58.0.92:8000/reviews/comments/7')
       .then(res => res.json())
       .then(data => setReviewData(data.review));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://10.58.0.92:8000/reviews/comments/7')
+      .then(res => res.json())
+      .then(data => setProductData(data.review));
   }, []);
 
   const increaseQuantity = () => {
@@ -52,7 +57,6 @@ function Detail() {
 
   return (
     <>
-      <Nav />
       <SubNav />
       <div className="detail">
         <div className="leftSide">
@@ -60,16 +64,22 @@ function Detail() {
             <div className="productMainImage">
               <img
                 className="productImg"
-                src="/images/nokcha.jpg"
+                src={productData.thumb_img}
                 alt="Product"
               />
             </div>
             <div className="productIntroduction">
-              <ul>{introList}</ul>
+              <ul>
+                <Intro productData={productData[0]} />
+              </ul>
             </div>
           </section>
           <div className="productDetails">
-            <img className="productDetailImage" src="#" alt="Product details" />
+            <img
+              className="productDetailImage"
+              src={productData.detail_img}
+              alt="Product details"
+            />
           </div>
           <div name="review" className="review">
             <div id="reviewInDetail" className="review">
@@ -151,7 +161,6 @@ function Detail() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

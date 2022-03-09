@@ -9,10 +9,11 @@ const handleStar = starIndex => {
 };
 
 const Rate = ({ score }) => {
+  let int = Math.round(score);
   let arr = [0, 0, 0, 0, 0];
 
   const divideScore = () => {
-    for (let i = 0; i < score; i++) {
+    for (let i = 0; i < int; i++) {
       arr[i] = 1;
     }
 
