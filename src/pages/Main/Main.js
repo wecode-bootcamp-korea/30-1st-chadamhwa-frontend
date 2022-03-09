@@ -9,11 +9,12 @@ import { Navigate, useNavigate } from 'react-router';
 
 function Main() {
   const navigate = useNavigate('');
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/data/data.json')
-  //     .then(res => res.json());
-  //     .then(data => setata));
-  // }, []);
+  const [teaData, setTeaData] = useState({});
+  useEffect(() => {
+    fetch('http://localhost:3000/data/tea.json')
+      .then(res => res.json())
+      .then(data => setTeaData(data));
+  }, []);
   function handleClick() {
     navigate('/cart');
   }
@@ -32,9 +33,11 @@ function Main() {
       </button>
 
       <Section
-        img="/images/sommelier.png"
-        span='"어떤 차를 마실지 고민이라면, 이 차는 어때요 ?"'
-        p="차담화 전통차 티소믈리에의 이번 주 P.I.C.K!"
+        key={teaData.id}
+        list={teaData.list}
+        img={teaData.img}
+        span={teaData.span}
+        p={teaData.p}
       />
 
       <Section

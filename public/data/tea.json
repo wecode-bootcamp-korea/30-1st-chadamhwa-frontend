@@ -4,101 +4,107 @@
   "span": "\"어떤 차를 마실지 고민이라면, 이 차는 어때요 ?\"",
   "p": "차담화 전통차 티소믈리에의 이번 주 P.I.C.K!",
   "list": [
-    {
-      "id": 1,
-      "name": "한 입에 쏘옥 차",
-      "img": "/images/product1.JPG",
-      "price": "7,000 원",
-      "rate": 4.9,
-      "review": 18
-    },
-    {
-      "id": 2,
-      "name": "아이셔 차",
-      "img": "../images/product1.JPG",
-      "price": "7,500 원",
-      "rate": 4.3,
-      "review": 10
-    },
-    {
-      "id": 3,
-      "name": "달달구리가 떙겨 차",
-      "img": "../images/product1.JPG",
-      "price": "5,500 원",
-      "rate": 4.8,
-      "review": 9
-    },
-    {
-      "id": 4,
-      "name": "으라차차",
-      "img": "../images/product1.JPG",
-      "price": "9,000 원",
-      "rate": 5.0,
-      "review": 21
-    },
-    {
-      "id": 5,
-      "name": "코로나 물리치차",
-      "img": "../images/product1.JPG",
-      "price": "8,000 원",
-      "rate": 4.2,
-      "review": 11
-    },
-    {
-      "id": 6,
-      "name": "내가 '야' 하면 넌 '차'",
-      "img": "../images/product1.JPG",
-      "price": "4,000 원",
-      "rate": 4.5,
-      "review": 7
-    },
-    {
-      "id": 7,
-      "name": "다함께 차차차",
-      "img": "../images/product1.JPG",
-      "price": "6,800 원",
-      "rate": 4.6,
-      "review": 30
-    },
-    {
-      "id": 8,
-      "name": "꿈을 펼차",
-      "img": "../images/product1.JPG",
-      "price": "9,500 원",
-      "rate": 4.9,
-      "review": 27
-    },
-    {
-      "id": 9,
-      "name": "팬티벗고 소리차",
-      "img": "../images/product1.JPG",
-      "price": "5,300 원",
-      "rate": 4.7,
-      "review": 9
-    },
-    {
-      "id": 10,
-      "name": "자진하차",
-      "img": "../images/product1.JPG",
-      "price": "3,000 원",
-      "rate": 4.1,
-      "review": 21
-    },
-    {
-      "id": 11,
-      "name": "정력이 올라차",
-      "img": "../images/product1.JPG",
-      "price": "17,0000 원",
-      "rate": 5.0,
-      "review": 55
-    },
-    {
-      "id": 12,
-      "name": "무임승차",
-      "img": "../images/product1.JPG",
-      "price": "2,500 원",
-      "rate": 3.8,
-      "review": 17
-    }
+    [
+      {
+        "id": 1,
+        "name": "한 입에 쏘옥 차",
+        "img": "/images/product1.JPG",
+        "price": "7,000 원",
+        "rate": 4.9,
+        "review": 18
+      },
+      {
+        "id": 2,
+        "name": "아이셔 차",
+        "img": "../images/product1.JPG",
+        "price": "7,500 원",
+        "rate": 4.3,
+        "review": 10
+      },
+      {
+        "id": 3,
+        "name": "달달구리가 떙겨 차",
+        "img": "../images/product1.JPG",
+        "price": "5,500 원",
+        "rate": 4.8,
+        "review": 9
+      },
+      {
+        "id": 4,
+        "name": "으라차차",
+        "img": "../images/product1.JPG",
+        "price": "9,000 원",
+        "rate": 5.0,
+        "review": 21
+      }
+    ],
+    [
+      {
+        "id": 5,
+        "name": "코로나 물리치차",
+        "img": "../images/product1.JPG",
+        "price": "8,000 원",
+        "rate": 4.2,
+        "review": 11
+      },
+      {
+        "id": 6,
+        "name": "내가 '야' 하면 넌 '차'",
+        "img": "../images/product1.JPG",
+        "price": "4,000 원",
+        "rate": 4.5,
+        "review": 7
+      },
+      {
+        "id": 7,
+        "name": "다함께 차차차",
+        "img": "../images/product1.JPG",
+        "price": "6,800 원",
+        "rate": 4.6,
+        "review": 30
+      },
+      {
+        "id": 8,
+        "name": "꿈을 펼차",
+        "img": "../images/product1.JPG",
+        "price": "9,500 원",
+        "rate": 4.9,
+        "review": 27
+      }
+    ],
+    [
+      {
+        "id": 9,
+        "name": "팬티벗고 소리차",
+        "img": "../images/product1.JPG",
+        "price": "5,300 원",
+        "rate": 4.7,
+        "review": 9
+      },
+      {
+        "id": 10,
+        "name": "자진하차",
+        "img": "../images/product1.JPG",
+        "price": "3,000 원",
+        "rate": 4.1,
+        "review": 21
+      },
+      {
+        "id": 11,
+        "name": "정력이 올라차",
+        "img": "../images/product1.JPG",
+        "price": "17,0000 원",
+        "rate": 5.0,
+        "review": 55
+      },
+      {
+        "id": 12,
+        "name": "무임승차",
+        "img": "../images/product1.JPG",
+        "price": "2,500 원",
+        "rate": 3.8,
+        "review": 17
+      }
+    ]
   ]
 }

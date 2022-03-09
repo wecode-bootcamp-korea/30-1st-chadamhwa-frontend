@@ -10,50 +10,54 @@ function Section(props) {
         <span className="propose">{props.span}</span>
         <p className="recommend">{props.p}</p>
         <div className="more-btn">
-          <a href="/">더보기 ></a>
+          <a href="/">더보기 </a>
         </div>
 
         <div className="slider">
           <a href="/">
             <i className="fa fa-chevron-left" aria-hidden="true" />
           </a>
-          <div className="product-box">
-            <Wrap
-              className="wrap"
-              img="/images/product1.JPG"
-              name="허니비 차"
-              price="8,000원"
-              rate="4.7"
-              review="5"
-            />
+          {props.list.map((ele, idx) => {
+            return (
+              <div className="product-box" key={idx}>
+                <Wrap
+                  className="wrap"
+                  img={ele[idx].img}
+                  name={ele[idx].name}
+                  price={ele[idx].price}
+                  rate={ele[idx].rate}
+                  review={ele[idx].review}
+                />
 
-            <Wrap
-              className="wrap"
-              img="/images/product2.JPG"
-              name="구름 버블티"
-              price="10,000원"
-              rate="4.9"
-              review="8"
-            />
+                <Wrap
+                  className="wrap"
+                  img="/images/product2.JPG"
+                  name="구름 버블티"
+                  price="10,000원"
+                  rate="4.9"
+                  review="8"
+                />
 
-            <Wrap
-              className="wrap"
-              img="/images/product3.JPG"
-              name="수줍은 홍티"
-              price="6,000원"
-              rate="4.5"
-              review="3"
-            />
+                <Wrap
+                  className="wrap"
+                  img="/images/product3.JPG"
+                  name="수줍은 홍티"
+                  price="6,000원"
+                  rate="4.5"
+                  review="3"
+                />
 
-            <Wrap
-              className="wrap"
-              img="/images/product4.JPG"
-              name="보라달빛 차"
-              price="9,000원"
-              rate="5.0"
-              review="13"
-            />
-          </div>
+                <Wrap
+                  className="wrap"
+                  img="/images/product4.JPG"
+                  name="보라달빛 차"
+                  price="9,000원"
+                  rate="5.0"
+                  review="13"
+                />
+              </div>
+            );
+          })}
           <a href="/">
             <i className="fa fa-chevron-right" aria-hidden="true" />
           </a>
