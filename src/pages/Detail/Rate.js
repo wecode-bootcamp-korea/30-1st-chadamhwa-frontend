@@ -1,131 +1,37 @@
 import React from 'react';
 
-function Rate({ score }) {
-  // 0 ~ 5, 3.5
-  switch (score) {
-    case 0:
-      return (
-        <span>
-          {/* {test.map()} */}
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 0.5:
-      return (
-        <span>
-          <i className="fa fa-star-half" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 1:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 1.5:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-half" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 2.0:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 2.5:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-half" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 3.0:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 3.5:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-half" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 4.0:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-half" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
-    case 4.5:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star-half" aria-hidden="true" />
-        </span>
-      );
-    case 5:
-      return (
-        <span>
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-          <i className="fa fa-star" aria-hidden="true" />
-        </span>
-      );
-
-    default:
-      return (
-        <span>
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-          <i className="fa fa-star-o" aria-hidden="true" />
-        </span>
-      );
+const handleStar = starIndex => {
+  if (starIndex === 0) {
+    return 'fa-star-o';
+  } else if (starIndex === 1) {
+    return 'fa-star';
   }
-}
+};
+
+const Rate = ({ score }) => {
+  let arr = [0, 0, 0, 0, 0];
+
+  const divideScore = () => {
+    for (let i = 0; i < score; i++) {
+      arr[i] = 1;
+    }
+
+    return arr;
+  };
+
+  return (
+    <span>
+      {divideScore().map((ele, index) => {
+        return (
+          <i
+            key={index}
+            className={`fa ${handleStar(ele)}`}
+            aria-hidden="true"
+          />
+        );
+      })}
+    </span>
+  );
+};
 
 export default Rate;

@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import Nav from '../../components/Nav/Nav';
+import SubNav from '../../components/Subnav/Subnav';
 import introList from './IntroList';
 import ReviewList from './ReviewList';
+import Footer from '../../components/Footer/Footer';
 import './Detail.scss';
 
 function Detail() {
   const [quantity, setQuantity] = useState(1);
   const [reviewData, setReviewData] = useState([]);
-  const [order, setOrder] = useState('createdAt');
+  const [rate, setRate] = useState(0);
+  const [comment, setComment] = useState('');
   const price = 24000;
+
+  useEffect(() => {
+    fetch('http://10.58.0.92:8000/reviews/comments/1')
+      .then(res => res.json())
+      .then(data => setReviewData(data.review));
+  }, []);
 
   const increaseQuantity = () => {
     setQuantity(quantity => quantity + 1);
@@ -18,110 +28,131 @@ function Detail() {
 
   const totalPrice = price * quantity;
 
-  useEffect(() => {
-    fetch('/data/reviewData.json')
-      .then(res => res.json())
-      .then(data => {
-        setReviewData(data);
-      });
-  }, []);
-
-  const handleNewestClick = () => {
-    setOrder('createdAt');
+  const handleReviewData = e => {
+    e.preventDefault();
+    fetch('http://??', {
+      method: 'POST',
+      body: JSON.stringify({}),
+      // user: username,
+      // drink_id: boughtProduct,
+      rating: rate,
+      comment: comment,
+    })
+      .then(response => response.json())
+      .then(response => setReviewData(response));
   };
 
-  const handleBestClick = () => {
-    setOrder('reviewRate');
+  const getRate = e => {
+    setRate(e.target.value);
   };
 
-  const handleWorstClick = () => {
-    setOrder('reviewRate');
+  const getComment = e => {
+    setComment(e.target.value);
   };
-
-  const sortedReviewData = reviewData.sort((a, b) => {
-    return a.order - b.order;
-  });
 
   return (
-    <div className="detail">
-      <div className="leftSide">
-        <section className="productIntro">
-          <div className="productMainImage">
-            <img
-              className="productImg"
-              src="/images/nokcha.jpg"
-              alt="Product"
-            />
-          </div>
-          <div className="productIntroduction">
-            <ul>{introList}</ul>
-          </div>
-        </section>
-        <div className="productDetails">
-          <img src="#" alt="Product details" />
-        </div>
-        <div name="review" className="review">
-          <div id="reviewInDetail" className="review">
-            <button className="reviewBtn">리뷰</button>
-          </div>
-          <section className="reviewSort">
-            <button onClick={handleNewestClick}>최신순</button>
-            <button onClick={handleBestClick}>평점 높은 순</button>
-            <button onClick={handleWorstClick}>평점 낮은 순</button>
-          </section>
-          <ReviewList reviewData={sortedReviewData} />
-          <button className="moreReview">더 많은 리뷰</button>
-        </div>
-      </div>
-      <div className="rightSideWrapper">
-        <div className="rightSide">
-          <ul>
-            <li className="quantity">
-              <span>수량</span>
-            </li>
-            <li>
-              <div className="quantityCounter">
-                <button
-                  className={` ${
-                    quantity > 1
-                      ? 'ableDecreaseQuantity'
-                      : 'unableDecreaseQuantity'
-                  }`}
-                  onClick={decreaseQuantity}
-                >
-                  −
-                </button>
-                <span>{quantity}</span>
-                <button className="increaseQuantity" onClick={increaseQuantity}>
-                  +
-                </button>
-              </div>
-            </li>
-            <li className="priceIs">
-              <span>총 상품 가격</span>
-            </li>
-            <div className="totalPrice">
-              <li>
-                <span className="totalPrice">{totalPrice}원</span>
-              </li>
+    <>
+      <Nav />
+      <SubNav />
+      <div className="detail">
+        <div className="leftSide">
+          <section className="productIntro">
+            <div className="productMainImage">
+              <img
+                className="productImg"
+                src="/images/nokcha.jpg"
+                alt="Product"
+              />
             </div>
-            <li className="deliveryFee">
-              <span>+(전국택배) 3,000원</span>
-            </li>
-            <li className="additionalDeliveryFee">
-              <span>+(제주도 및 도서산간) 3,000원</span>
-            </li>
-            <li className="freeDeliveryFee">
-              <span>본 농장에서 50,000원 이상 구매 시 배송비 무료!</span>
-            </li>
-          </ul>
-          <section className="rightSideBtn">
-            <button>장바구니 담기</button>
-            <button>바로 구매하기</button>
+            <div className="productIntroduction">
+              <ul>{introList}</ul>
+            </div>
           </section>
+          <div className="productDetails">
+            <img className="productDetailImage" src="#" alt="Product details" />
+          </div>
+          <div name="review" className="review">
+            <div id="reviewInDetail" className="review">
+              <button className="reviewBtn">리뷰</button>
+            </div>
+            <form onSubmit={handleReviewData}>
+              <div>
+                <i className="fa fa-star" aria-hidden="true" />
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  placeholder="별점"
+                  onChange={getRate}
+                  value={rate}
+                />
+              </div>
+              <input
+                type="textarea"
+                placeholder="리뷰 내용"
+                className="commentInput"
+                onChange={getComment}
+                value={comment}
+              />
+              <button>입력</button>
+            </form>
+            <ReviewList reviewData={reviewData} />
+          </div>
+        </div>
+        <div className="rightSideWrapper">
+          <div className="rightSide">
+            <ul>
+              <li className="quantity">
+                <span>수량</span>
+              </li>
+              <li>
+                <div className="quantityCounter">
+                  <button
+                    className={` ${
+                      quantity > 1
+                        ? 'ableDecreaseQuantity'
+                        : 'unableDecreaseQuantity'
+                    }`}
+                    onClick={decreaseQuantity}
+                  >
+                    −
+                  </button>
+                  <span>{quantity}</span>
+                  <button
+                    className="increaseQuantity"
+                    onClick={increaseQuantity}
+                  >
+                    +
+                  </button>
+                </div>
+              </li>
+              <li className="priceIs">
+                <span>총 상품 가격</span>
+              </li>
+              <div className="totalPrice">
+                <li>
+                  <span className="totalPrice">{totalPrice}원</span>
+                </li>
+              </div>
+              <li className="deliveryFee">
+                <span>+(전국택배) 3,000원</span>
+              </li>
+              <li className="additionalDeliveryFee">
+                <span>+(제주도 및 도서산간) 3,000원</span>
+              </li>
+              <li className="freeDeliveryFee">
+                <span>본 농장에서 50,000원 이상 구매 시 배송비 무료!</span>
+              </li>
+            </ul>
+            <section className="rightSideBtn">
+              <button>장바구니 담기</button>
+              <button>바로 구매하기</button>
+            </section>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

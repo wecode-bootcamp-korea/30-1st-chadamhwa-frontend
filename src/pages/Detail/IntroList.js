@@ -1,4 +1,5 @@
 import React from 'react';
+import Rate from './Rate';
 
 const list = [
   { id: 1, class: 'name', text: '하동 녹차' },
@@ -7,9 +8,15 @@ const list = [
     class: 'catchphrase',
     text: '차 한 잔으로 편안함과 차분함을 얻을 수 있어요!',
   },
-  { id: 3, class: 'hashtag', text: '#진한 녹차 향 #은은한 단 맛' },
-  { id: 4, class: 'review', text: '하동 녹차', isReview: true },
-  { id: 5, class: 'category', text: '주종: 약주' },
+  { id: 3, class: 'hashtag', text: '#차담화 오리지널 #JMT' },
+  {
+    id: 4,
+    class: 'review',
+    text: '하동 녹차',
+    reviewRate: 5,
+    isReview: true,
+  },
+  { id: 5, class: 'category', text: '차종: 약주' },
   { id: 6, class: 'isCaffeine', text: '카페인: 유' },
   { id: 7, class: 'volume', text: '용량: 500ml' },
   { id: 8, class: 'delivery', text: '배송기간: 2일 이내 배송' },
@@ -24,7 +31,7 @@ const introList = list.map(ele => {
     <div key={ele.id} className={ele.class}>
       {ele.isReview ? (
         <li>
-          <img src="#" alt="Product rate" />
+          <Rate score={ele.reviewRate} />
           <a href="#reviewInDetail">[123 리뷰]</a>
         </li>
       ) : (
