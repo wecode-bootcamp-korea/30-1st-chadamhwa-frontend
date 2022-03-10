@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import '../../styles/common.scss';
+
+@mixin grayDescription {
+  margin-bottom: 7px;
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+@mixin reviewStyle {
+  padding: 4px 14px;
+  border: #a3d89a 3px solid;
+  border-radius: 10px;
+  background-color: white;
+  color: #0c4d00;
+  font-size: 14px;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 960px;
+  height: 976px;
+  padding: 50px 0px 250px 20px;
+  margin-top: 70px;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .leftSide {
+    margin: 10px 20px 0px 20px;
+
+    .productIntro {
+      display: flex;
+      justify-content: space-around;
+      padding: 0px 30px 0px 0px;
+
+      .productMainImage {
+        .productImg {
+          width: 295px;
+          height: 390px;
+          text-align: left;
+          padding: 15px 20px 0px 0px;
+        }
+      }
+
+      .productIntroduction {
+        text-align: left;
+        margin: 0px 0px 8px 10px;
+
+        .name {
+          margin-bottom: 30px;
+          font-size: 20px;
+          color: #8c8c8c;
+        }
+
+        .catchphrase {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #979797;
+        }
+
+        .hashtag {
+          margin-bottom: 7px;
+          font-size: 14px;
+          color: #ffb400;
+        }
+
+        .review {
+          margin-bottom: 40px;
+
+          span {
+            margin-right: 5px;
+            margin-bottom: 5px;
+            color: #1cb100;
+            font-size: 20px;
+          }
+
+          a {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #1cb100;
+            text-decoration: underline;
+            text-underline-position: under;
+          }
+        }
+
+        .category {
+          @include grayDescription;
+        }
+
+        .isCaffeine {
+          @include grayDescription;
+        }
+
+        .volume {
+          @include grayDescription;
+        }
+
+        .delivery {
+          margin-bottom: 40px;
+          font-size: 14px;
+          color: #d9d9d9;
+        }
+
+        .priceCategory {
+          @include grayDescription;
+        }
+
+        .price {
+          margin: 10px 0px 7px;
+          padding: 0px 0px 15px;
+          font-size: 30px;
+          color: #8c8c8c;
+        }
+
+        .expirationDate {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #1cb100;
+        }
+
+        .howToKeep {
+          font-size: 14px;
+          color: #1cb100;
+        }
+      }
+    }
+
+    .productDetails {
+      margin-top: 66px;
+      margin-bottom: 50px;
+
+      .productSnack {
+        @include grayDescription();
+      }
+
+      .productDetailImage {
+        width: 500px;
+        height: 600px;
+      }
+    }
+
+    .review {
+      margin-top: 5px;
+      padding-bottom: 30px;
+
+      .review {
+        text-align: left;
+        padding: 10px;
+        border: 20px;
+
+        .reviewBtn {
+          width: 75px;
+          height: 30px;
+          border: 0px;
+          border-radius: 10px;
+          padding: 1px 6px;
+          background-color: #1cb100;
+          color: white;
+          font-size: 13px;
+        }
+      }
+
+      form {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 60px;
+        margin-right: 60px;
+
+        div {
+          @include reviewStyle;
+
+          i {
+          }
+
+          input {
+            border: 0px;
+            font-size: 14px;
+          }
+        }
+
+        .commentInput {
+          @include reviewStyle;
+          padding: 3px 150px 3px 15px;
+        }
+
+        button {
+          @include reviewStyle;
+          border-color: #1cb100;
+          background-color: #1cb100;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .rightSideWrapper {
+    height: 100%;
+
+    .rightSide {
+      position: sticky;
+      top: 90px;
+      width: 280px;
+      vertical-align: top;
+      text-align: right;
+      color: #979797;
+      box-shadow: #e2e2e2 0px 0px 3px 0px;
+      border-radius: 10px;
+      padding: 35px 20px 30px;
+
+      .quantity {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .quantityCounter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 240px;
+        height: 45px;
+        padding: 0px 29px;
+        margin-bottom: 103px;
+        border: 1px #e2e2e2 solid;
+        border-radius: 10px;
+        font-size: 14px;
+
+        .unableDecreaseQuantity {
+          color: #979797;
+          background-color: white;
+          border: 0px;
+          padding: 3px 5px 0px 5px;
+          font-size: 25px;
+          font-weight: 900;
+        }
+
+        .ableDecreaseQuantity {
+          color: #1cb100;
+          background-color: white;
+          border: 0px;
+          padding: 3px 5px 0px 5px;
+          font-size: 25px;
+          font-weight: 900;
+        }
+
+        span {
+          font-size: 14px;
+        }
+
+        .increaseQuantity {
+          color: #1cb100;
+          background-color: white;
+          border: 0px;
+          padding: 0px 5px;
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+
+      input {
+        font-size: 13px;
+        margin-bottom: 53px;
+      }
+
+      .priceIs {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      .totalPrice {
+        text-align: center;
+        width: 240px;
+        height: 45px;
+        padding: 10px;
+        margin-bottom: 35px;
+        border: 1px #e2e2e2 solid;
+        border-radius: 10px;
+
+        .totalPrice {
+          border: 0px;
+          font-size: 13px;
+        }
+      }
+
+      .deliveryFee {
+        font-size: 11px;
+        margin-bottom: 5px;
+      }
+
+      .additionalDeliveryFee {
+        font-size: 11px;
+        margin-bottom: 25px;
+      }
+
+      .freeDeliveryFee {
+        font-size: 11px;
+        margin-bottom: 15px;
+      }
+
+      .rightSideBtn {
+        text-align: center;
+
+        button:nth-child(1) {
+          width: 150px;
+          height: 45px;
+          background-color: #ffb400;
+          border: 1px solid #ffb400;
+          color: white;
+          border-radius: 10px;
+          margin-bottom: 11px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        button:nth-child(2) {
+          width: 150px;
+          height: 45px;
+          background-color: #1cb100;
+          border: 1px solid #1cb100;
+          color: white;
+          border-radius: 10px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
