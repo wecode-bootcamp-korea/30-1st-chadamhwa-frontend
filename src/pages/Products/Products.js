@@ -17,20 +17,30 @@ function Products() {
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
   const [priceRange, setPriceRange] = useState(0);
-  const [sortByKey, setSortByKey] = useState();
+  const [sortByKey, setSortByKey] = useState('최신순');
+
   const sortBy = {
     최신순: 'newest',
     오래된순: 'oldest',
     리뷰순: 'review',
   };
 
-  // const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     fetch('http://localhost:3000/data/data.json')
       .then(res => res.json())
       .then(data => setProductsList(data));
   }, []);
+
+  useEffect(() => {
+    let urlPath = location.pathname + '?';
+
+    urlPath = urlPath + 'sort_by=' + sortBy[sortByKey];
+
+    // if ()
+    console.log(urlPath);
+  }, [categoryCheck, sortByKey]);
 
   function activeBtn({ target }) {
     target.classList.contains('active-btn')
@@ -53,14 +63,6 @@ function Products() {
       setIsDecaffeine(!isDecaffeine);
     }
   }
-
-  // function setUrl() {
-  //   let setPath = location.pathname + '/?';
-
-  //   function addPath() {
-  //     let addPathQueue = '';
-  //   }
-  // }
 
   return (
     <>
