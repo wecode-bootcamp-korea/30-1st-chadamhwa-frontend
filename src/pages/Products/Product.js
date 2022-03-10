@@ -2,12 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import './Product.scss';
 
 function Product({ productData }) {
-  const { productId, img, name, price, rating, review } = productData;
+  const { id, img, name, price, rating, review } = productData;
   const navigate = useNavigate();
   return (
     <div
       onClick={() => {
-        navigate(`/products/${productId}`);
+        navigate(`/products/${id}`);
       }}
       className="wrap"
     >
