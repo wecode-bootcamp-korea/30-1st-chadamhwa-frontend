@@ -6,22 +6,15 @@ import './Detail.scss';
 
 function Detail() {
   const [quantity, setQuantity] = useState(1);
-  const [productData, setProductData] = useState([]);
-  const [reviewData, setReviewData] = useState([]);
+  const [detailData, setDetailData] = useState([]);
   const [rate, setRate] = useState(0);
   const [comment, setComment] = useState('');
-  const price = Math.floor(productData[0].price);
+  const price = Math.floor(detailData[0].price);
 
   useEffect(() => {
     fetch('http://10.58.0.92:8000/reviews/comments/7')
       .then(res => res.json())
-      .then(data => setReviewData(data.review));
-  }, []);
-
-  useEffect(() => {
-    fetch('http://10.58.0.92:8000/reviews/comments/7')
-      .then(res => res.json())
-      .then(data => setProductData(data.review));
+      .then(data => setDetailData(data.review));
   }, []);
 
   const increaseQuantity = () => {
@@ -44,7 +37,7 @@ function Detail() {
       comment: comment,
     })
       .then(response => response.json())
-      .then(response => setReviewData(response));
+      .then(response => setDetailData(response));
   };
 
   const getRate = e => {
@@ -56,7 +49,7 @@ function Detail() {
   };
 
   return (
-    productData.length > 0 && (
+    detailData.length > 0 && (
       <>
         <SubNav />
         <div className="detail">
@@ -65,20 +58,20 @@ function Detail() {
               <div className="productMainImage">
                 <img
                   className="productImg"
-                  src={productData[0].thumb_img}
+                  src={detailData[0].thumb_img}
                   alt="Product"
                 />
               </div>
               <div className="productIntroduction">
                 <ul>
-                  <Intro productData={productData[0]} />
+                  <Intro productData={detailData[0]} />
                 </ul>
               </div>
             </section>
             <div className="productDetails">
               <img
                 className="productDetailImage"
-                src={productData[0].detail_img}
+                src={detailData[0].detail_img}
                 alt="Product details"
               />
             </div>
@@ -107,7 +100,7 @@ function Detail() {
                 />
                 <button>입력</button>
               </form>
-              <ReviewList reviewData={reviewData} />
+              <ReviewList reviewData={detailData} />
             </div>
           </div>
           <div className="rightSideWrapper">
