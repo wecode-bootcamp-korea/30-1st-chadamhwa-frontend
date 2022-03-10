@@ -10,10 +10,10 @@ const SORT_LIST = {
 };
 
 const CATEGORY_LIST = [
-  { id: 1, content: '뿌리차' },
-  { id: 2, content: '과일차' },
-  { id: 3, content: '곡물차' },
-  { id: 4, content: '잎차' },
+  { id: 1, content: '뿌리차', name: 'root_tea' },
+  { id: 2, content: '과일차', name: 'fruit_tea' },
+  { id: 3, content: '곡물차', name: 'grain_tea' },
+  { id: 4, content: '잎차', name: 'leaf_tea' },
 ];
 
 function Products() {
@@ -37,10 +37,13 @@ function Products() {
     addPath = addPath + 'sort_by=' + SORT_LIST[sortByKey];
 
     if (!!categoryCheck.length) {
-      addPath = addPath + '&category=';
+      categoryCheck.forEach(el => {
+        addPath =
+          addPath +
+          '&category=' +
+          CATEGORY_LIST.find(category => category.id === el).name;
+      });
     }
-
-    // categoryCheck.reduce((acc,cur) => )
 
     if (isCaffeine || isDecaffeine) {
       addPath = addPath + '&is_caffeinated=' + caffeineCheck;
@@ -53,8 +56,6 @@ function Products() {
     fetch('http://10.58.2.110:8000/drinks/products' + addPath)
       .then(res => res.json())
       .then(data => setProductsList(data.result));
-
-    console.log(addPath);
   }, [categoryCheck, sortByKey, priceRange, isCaffeine, isDecaffeine]);
 
   function btnHandler(id) {
@@ -64,14 +65,6 @@ function Products() {
     }
 
     setCategoryCheck(categoryCheck.concat(id));
-  }
-
-  console.log(categoryCheck);
-
-  function activeBtn({ target }) {
-    target.classList.contains('active-btn')
-      ? target.classList.remove('active-btn')
-      : target.classList.add('active-btn');
   }
 
   function activeBtnCaffeine({ target }) {
@@ -107,7 +100,11 @@ function Products() {
                 {CATEGORY_LIST.map(category => (
                   <button
                     key={category.id}
-                    className="filter-btn"
+                    className={`filter-btn ${
+                      categoryCheck.indexOf(category.id) !== -1
+                        ? 'active-btn'
+                        : ''
+                    }`}
                     onClick={() => btnHandler(category.id)}
                   >
                     {category.content}
