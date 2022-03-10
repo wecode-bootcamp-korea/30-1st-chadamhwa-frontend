@@ -10,16 +10,16 @@ function Products() {
   const [category, setCategory] = useState([
     '뿌리차',
     '과일차',
-    '견과류차',
+    '곡물차',
     '잎차',
   ]);
-  const [categoryCheck, setCategoryCheck] = useState([]);
+  const [categoryCheck, setCategoryCheck] = useState(['', '', '', '']);
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
   const [priceRange, setPriceRange] = useState(0);
   const [sortByKey, setSortByKey] = useState('최신순');
 
-  const sortBy = {
+  const sortByCheck = {
     최신순: 'newest',
     오래된순: 'oldest',
     리뷰순: 'review',
@@ -28,19 +28,39 @@ function Products() {
   const location = useLocation();
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/data.json')
+    fetch('http://10.58.2.110:8000/drinks/products?sort_by=newest')
       .then(res => res.json())
-      .then(data => setProductsList(data));
+      .then(data => setProductsList(data.result));
   }, []);
 
   useEffect(() => {
-    let urlPath = location.pathname + '?';
+    let addPath = '?';
+    const caffeineCheck = isCaffeine ? 'True' : 'False';
 
-    urlPath = urlPath + 'sort_by=' + sortBy[sortByKey];
+    addPath = addPath + 'sort_by=' + sortByCheck[sortByKey];
 
-    // if ()
-    console.log(urlPath);
-  }, [categoryCheck, sortByKey]);
+    if (categoryCheck) {
+      addPath = addPath + '&category=';
+    }
+
+    if (isCaffeine || isDecaffeine) {
+      addPath = addPath + '&is_caffeinated=' + caffeineCheck;
+    }
+
+    if (priceRange) {
+      addPath = addPath + '&price_upper=' + priceRange;
+    }
+
+    fetch('http://10.58.2.110:8000/drinks/products' + addPath)
+      .then(res => res.json())
+      .then(data => setProductsList(data.result));
+
+    console.log(addPath);
+  }, [categoryCheck, sortByKey, priceRange, isCaffeine, isDecaffeine]);
+
+  function btnHandler({ target }) {
+    activeBtn();
+  }
 
   function activeBtn({ target }) {
     target.classList.contains('active-btn')
@@ -79,7 +99,7 @@ function Products() {
               <div className="filter-categoriesBox">
                 <div className="filter-title">차 종</div>
                 {category.map((category, idx) => (
-                  <button key={idx} className="filter-btn" onClick={activeBtn}>
+                  <button key={idx} className="filter-btn" onClick={btnHandler}>
                     {category}
                   </button>
                 ))}
