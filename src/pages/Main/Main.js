@@ -23,8 +23,7 @@ function Main() {
 
   return (
     <>
-      {/* <Nav /> */}
-      {/* <Subnav /> */}
+      <Subnav />
       <Figure />
       <button onClick={handleClick} className="cart-bar">
         <img
@@ -46,7 +45,6 @@ function Main() {
             />
           );
         })}
-      {/* <Footer /> */}
     </>
   );
 }

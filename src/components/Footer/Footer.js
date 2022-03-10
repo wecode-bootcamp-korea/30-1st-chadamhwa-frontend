@@ -5,7 +5,7 @@ function Footer() {
     <footer className="footer">
       <div className="inner">
         <div className="aside-left">
-          <ul className="wrap">
+          <ul className="footer-wrap">
             <li className="provision">
               <a href="/">이용약관</a>
             </li>

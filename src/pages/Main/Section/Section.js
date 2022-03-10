@@ -6,9 +6,12 @@ function Section(props) {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.2.110:8000/drinks/farm-products', {
-      method: 'GET',
-    })
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/drinks/farm-products',
+      {
+        method: 'GET',
+      }
+    )
       .then(res => res.json())
       .then(data => setProductList(data.result.farm));
   }, []);
