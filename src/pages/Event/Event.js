@@ -35,14 +35,14 @@ function Event() {
         <div className="banner">
           <img
             className="evnet-banner"
-            src="/images/event3.png"
+            src="/images/event1.png"
             alt="banner3"
           />
         </div>
         <div className="banner">
           <img
             className="evnet-banner"
-            src="/images/event1.png"
+            src="/images/event3.png"
             alt="banner4"
           />
         </div>
