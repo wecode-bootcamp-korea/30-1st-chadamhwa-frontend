@@ -9,13 +9,14 @@ function Detail() {
   const [detailData, setDetailData] = useState([]);
   const [rate, setRate] = useState(0);
   const [comment, setComment] = useState('');
-  const price = Math.floor(detailData[0].price);
 
   useEffect(() => {
-    fetch('http://10.58.0.92:8000/reviews/comments/7')
+    fetch('http://10.58.7.52:8000/reviews/comments/1')
       .then(res => res.json())
       .then(data => setDetailData(data.review));
   }, []);
+
+  const price = Math.floor(detailData[0].price);
 
   const increaseQuantity = () => {
     setQuantity(quantity => quantity + 1);
