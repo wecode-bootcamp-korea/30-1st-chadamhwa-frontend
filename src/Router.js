@@ -8,6 +8,7 @@ import Cart from './pages/Cart/Cart';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import Signup from './pages/Login/Signup/Signup';
+import Products from './pages/Products/Products';
 
 function Router() {
   return (
