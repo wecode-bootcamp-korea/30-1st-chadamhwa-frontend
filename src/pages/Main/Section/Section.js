@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Section.scss';
 import Wrap from './Wrap/Wrap';
 
 function Section(props) {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://10.58.2.110:8000/drinks/farm-products', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => setProductList(data.result.farm));
+  }, []);
   return (
     <section className="section">
       <div className="inner">
@@ -12,33 +21,25 @@ function Section(props) {
         <div className="more-btn">
           <a href="/">더보기 </a>
         </div>
-        {props.list.map((card, idx) => {
+        {productList.map((card, idx) => {
           return (
             <div className="product-box" key={idx}>
-              {card.map((ele, idx) => {
+              {card.drinks.map((ele, idx) => {
                 return (
                   <Wrap
-                    key={idx}
+                    key={ele.id}
                     className="wrap"
-                    img={ele.img}
+                    img={ele.image}
                     name={ele.name}
                     price={ele.price}
-                    rate={ele.rate}
-                    review={ele.review}
+                    rate={ele.average_rating}
+                    review={ele.review_count}
                   />
                 );
               })}
             </div>
           );
         })}
-        <div className="slider">
-          <a href="/">
-            <i className="fa fa-chevron-left" aria-hidden="true" />
-          </a>
-          <a href="/">
-            <i className="fa fa-chevron-right" aria-hidden="true" />
-          </a>
-        </div>
       </div>
     </section>
   );

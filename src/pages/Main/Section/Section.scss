@@ -51,26 +51,6 @@
         }
       }
     }
-
-    .slider {
-      max-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      a {
-        text-decoration: none;
-        color: #b2b2b2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        border: 1px solid #b2b2b2;
-        text-align: center;
-      }
-    }
     .product-box {
       margin: 10px 20px;
       display: flex;
