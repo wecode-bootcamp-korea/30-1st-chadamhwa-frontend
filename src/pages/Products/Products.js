@@ -25,7 +25,9 @@ function Products() {
   const [sortByKey, setSortByKey] = useState('최신순');
 
   useEffect(() => {
-    fetch('http://10.58.2.110:8000/drinks/products?sort_by=newest')
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/drinks/products?sort_by=newest'
+    )
       .then(res => res.json())
       .then(data => setProductsList(data.result));
   }, []);
@@ -53,9 +55,14 @@ function Products() {
       addPath = addPath + '&price_upper=' + priceRange;
     }
 
-    fetch('http://10.58.2.110:8000/drinks/products' + addPath)
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/drinks/products' +
+        addPath
+    )
       .then(res => res.json())
       .then(data => setProductsList(data.result));
+
+    console.log(addPath);
   }, [categoryCheck, sortByKey, priceRange, isCaffeine, isDecaffeine]);
 
   function btnHandler(id) {
