@@ -10,21 +10,24 @@ import { Navigate, useNavigate } from 'react-router';
 function Main() {
   const navigate = useNavigate('');
   const [teaData, setTeaData] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:3000/data/tea.json')
       .then(res => res.json())
       .then(data => setTeaData(data));
   }, []);
+
   function handleClick() {
     navigate('/cart');
   }
+
   return (
     <>
       {/* <Nav /> */}
       {/* <Subnav /> */}
       <Figure />
 
-      {<button onClick={handleClick} className="cart-bar">
+      <button onClick={handleClick} className="cart-bar">
         <img
           className="cart"
           src="/images/shopping-cart.png"
