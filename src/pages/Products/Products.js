@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Subnav from '../../components/Subnav/Subnav';
 import Product from './Product';
-
 import './Products.scss';
+
+const SORT_LIST = {
+  최신순: 'newest',
+  오래된순: 'oldest',
+  리뷰순: 'review',
+};
+
+const CATEGORY_LIST = [
+  { id: 1, content: '뿌리차' },
+  { id: 2, content: '과일차' },
+  { id: 3, content: '곡물차' },
+  { id: 4, content: '잎차' },
+];
 
 function Products() {
   const [productsList, setProductsList] = useState([]);
-  const [category, setCategory] = useState([
-    '뿌리차',
-    '과일차',
-    '곡물차',
-    '잎차',
-  ]);
-  const [categoryCheck, setCategoryCheck] = useState(['', '', '', '']);
+  const [categoryCheck, setCategoryCheck] = useState([]);
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
   const [priceRange, setPriceRange] = useState(0);
   const [sortByKey, setSortByKey] = useState('최신순');
-
-  const sortByCheck = {
-    최신순: 'newest',
-    오래된순: 'oldest',
-    리뷰순: 'review',
-  };
-
-  const location = useLocation();
 
   useEffect(() => {
     fetch('http://10.58.2.110:8000/drinks/products?sort_by=newest')
@@ -37,11 +34,13 @@ function Products() {
     let addPath = '?';
     const caffeineCheck = isCaffeine ? 'True' : 'False';
 
-    addPath = addPath + 'sort_by=' + sortByCheck[sortByKey];
+    addPath = addPath + 'sort_by=' + SORT_LIST[sortByKey];
 
-    if (categoryCheck) {
+    if (!!categoryCheck.length) {
       addPath = addPath + '&category=';
     }
+
+    // categoryCheck.reduce((acc,cur) => )
 
     if (isCaffeine || isDecaffeine) {
       addPath = addPath + '&is_caffeinated=' + caffeineCheck;
@@ -58,9 +57,16 @@ function Products() {
     console.log(addPath);
   }, [categoryCheck, sortByKey, priceRange, isCaffeine, isDecaffeine]);
 
-  function btnHandler({ target }) {
-    activeBtn();
+  function btnHandler(id) {
+    if (categoryCheck.indexOf(id) !== -1) {
+      setCategoryCheck(categoryCheck.filter(el => el !== id));
+      return;
+    }
+
+    setCategoryCheck(categoryCheck.concat(id));
   }
+
+  console.log(categoryCheck);
 
   function activeBtn({ target }) {
     target.classList.contains('active-btn')
@@ -98,9 +104,13 @@ function Products() {
             <div className="filters">
               <div className="filter-categoriesBox">
                 <div className="filter-title">차 종</div>
-                {category.map((category, idx) => (
-                  <button key={idx} className="filter-btn" onClick={btnHandler}>
-                    {category}
+                {CATEGORY_LIST.map(category => (
+                  <button
+                    key={category.id}
+                    className="filter-btn"
+                    onClick={() => btnHandler(category.id)}
+                  >
+                    {category.content}
                   </button>
                 ))}
               </div>
