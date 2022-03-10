@@ -1,0 +1,37 @@
+.review {
+  .reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    padding: 0px 30px;
+    border-radius: 10px;
+    background-color: #a3d89a;
+    color: #0c4d00;
+    font-size: 13px;
+
+    .nickname {
+      margin-right: 10px;
+    }
+
+    .boughtWhat {
+      .boughtProduct {
+        margin-right: 10px;
+      }
+
+      .reviewRate {
+        margin-right: 10px;
+      }
+
+      .boughtTime {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .reviewComment {
+    text-align: left;
+    padding: 20px 25px;
+    font-size: 12px;
+  }
+}
