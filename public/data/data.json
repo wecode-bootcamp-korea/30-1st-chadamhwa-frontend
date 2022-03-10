@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "우롱차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 999999",
+    "rating": 4.7,
+    "review": 7
+  },
+  {
+    "id": 2,
+    "name": "연근차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 888888",
+    "rating": 4.3,
+    "review": 4
+  },
+  {
+    "id": 3,
+    "name": "꿀물차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 877999",
+    "rating": 4.9,
+    "review": 2
+  },
+  {
+    "id": 4,
+    "name": "연꽃차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 666999",
+    "rating": 4.2,
+    "review": 9
+  },
+  {
+    "id": 5,
+    "name": "녹차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 399999",
+    "rating": 4.8,
+    "review": 37
+  },
+  {
+    "id": 6,
+    "name": "페퍼민트 차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 569999",
+    "rating": 3.4,
+    "review": 38
+  },
+  {
+    "id": 7,
+    "name": "홍차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 999999",
+    "rating": 4.7,
+    "review": 7
+  },
+  {
+    "id": 8,
+    "name": "둥글레차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 569999",
+    "rating": 3.7,
+    "review": 4
+  },
+  {
+    "id": 9,
+    "name": "로즈마리 차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 659999",
+    "rating": 3.9,
+    "review": 24
+  },
+  {
+    "id": 10,
+    "name": "당귀차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 439999",
+    "rating": 4.6,
+    "review": 7
+  },
+  {
+    "id": 11,
+    "name": "인삼차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 789999",
+    "rating": 3.8,
+    "review": 2
+  },
+  {
+    "id": 12,
+    "name": "오미자차",
+    "img": "/images/alisher-sharip-mumpl9-D7Uc-unsplash.jpg",
+    "price": "₩ 739999",
+    "rating": 4.9,
+    "review": 19
+  }
+]
