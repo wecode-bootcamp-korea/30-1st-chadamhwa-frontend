@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Subnav from '../../components/Subnav/Subnav';
-// import Product from './Product';
+import Product from './Product';
 
 import './Products.scss';
 
 function Products() {
-  const [categoriesList, setCategoriesList] = useState([
+  const [productsList, setProductsList] = useState([]);
+  const [category, setCategory] = useState([
     '뿌리차',
     '과일차',
     '견과류차',
     '잎차',
   ]);
-  const [productsList, setProductsList] = useState([]);
-
+  const [categoryCheck, setCategoryCheck] = useState([]);
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
+  const [priceRange, setPriceRange] = useState(0);
+  const [sortByKey, setSortByKey] = useState();
+  const sortBy = {
+    최신순: 'newest',
+    오래된순: 'oldest',
+    리뷰순: 'review',
+  };
 
-  // useEffect(() => {
-  //   fetch('http://10.58.2.110:8000/damhwamarket/test')
-  //     .then(res => res.json())
-  //     .then(data => setCategoriesList(data.message));
-  // }, []);
+  // const location = useLocation();
 
   useEffect(() => {
     fetch('http://localhost:3000/data/data.json')
@@ -35,26 +39,28 @@ function Products() {
   }
 
   function activeBtnCaffeine({ target }) {
-    target.classList.contains('caffeine')
-      ? caffeineToggler(true, isDecaffeine)
-      : caffeineToggler(false, isCaffeine);
+    target.innerText === '카페인'
+      ? caffeineToggler(true)
+      : caffeineToggler(false);
   }
 
-  function caffeineToggler(caffeine, toggle) {
+  function caffeineToggler(caffeine) {
     if (caffeine) {
-      if (isDecaffeine === true) {
-        setIsDecaffeine(!isDecaffeine);
-        setIsCaffeine(!isCaffeine);
-      }
+      isDecaffeine && setIsDecaffeine(!isDecaffeine);
       setIsCaffeine(!isCaffeine);
     } else {
-      if (isCaffeine === true) {
-        setIsCaffeine(!isCaffeine);
-        setIsDecaffeine(!isDecaffeine);
-      }
+      isCaffeine && setIsCaffeine(!isCaffeine);
       setIsDecaffeine(!isDecaffeine);
     }
   }
+
+  // function setUrl() {
+  //   let setPath = location.pathname + '/?';
+
+  //   function addPath() {
+  //     let addPathQueue = '';
+  //   }
+  // }
 
   return (
     <>
@@ -70,7 +76,7 @@ function Products() {
             <div className="filters">
               <div className="filter-categoriesBox">
                 <div className="filter-title">차 종</div>
-                {categoriesList.map((category, idx) => (
+                {category.map((category, idx) => (
                   <button key={idx} className="filter-btn" onClick={activeBtn}>
                     {category}
                   </button>
@@ -79,17 +85,13 @@ function Products() {
               <div className="filter-caffeineBox">
                 <div className="filter-title">카페인</div>
                 <button
-                  className={`filter-btn caffeine ${
-                    isCaffeine ? 'active-btn' : ''
-                  }`}
+                  className={`filter-btn ${isCaffeine ? 'active-btn' : ''}`}
                   onClick={activeBtnCaffeine}
                 >
                   카페인
                 </button>
                 <button
-                  className={`filter-btn decaffeine ${
-                    isDecaffeine ? 'active-btn' : ''
-                  }`}
+                  className={`filter-btn ${isDecaffeine ? 'active-btn' : ''}`}
                   onClick={activeBtnCaffeine}
                 >
                   디카페인
@@ -99,29 +101,32 @@ function Products() {
                 <div className="filter-price">
                   <div className="filter-title">가 격</div>
                   <div className="slider-wrapper">
-                    <input type="range" />
+                    <input
+                      type="range"
+                      max="200000"
+                      step="1000"
+                      onInput={e => {
+                        setPriceRange(e.target.value);
+                      }}
+                    />
+                    <div className="price-range">{priceRange}</div>
                   </div>
                 </div>
-                <select className="filter-sortby">
-                  <option value="">최신순</option>
-                  <option value="">오래된순</option>
-                  <option value="">리뷰순</option>
+                <select
+                  className="filter-sortby"
+                  onChange={e => {
+                    setSortByKey(e.target.value);
+                  }}
+                >
+                  <option value="최신순">최신순</option>
+                  <option value="오래된순">오래된순</option>
+                  <option value="리뷰순">리뷰순</option>
                 </select>
               </div>
             </div>
             <div className="products">
-              {productsList.map((product, idx) => {
-                // return (
-                //   <Product
-                //     key={product.id}
-                //     // data={product}
-                //     name={product.name}
-                //     img={product.img}
-                //     price={product.price}
-                //     rating={product.rating}
-                //     review={product.review}
-                //   />
-                // );
+              {productsList.map(product => {
+                return <Product key={product.id} productData={product} />;
               })}
             </div>
           </div>

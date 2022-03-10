@@ -83,9 +83,11 @@ $maintheme-butter: #f4bb5f;
 
           .filter-price {
             display: flex;
-          }
 
-          .filter-sortby {
+            .slider-wrapper {
+              display: flex;
+              align-items: center;
+            }
           }
         }
       }
