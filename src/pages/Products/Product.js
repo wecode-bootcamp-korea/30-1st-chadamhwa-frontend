@@ -2,7 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import './Product.scss';
 
 function Product({ productData }) {
-  const { id, img, name, price, rating, review } = productData;
+  const { id, image, name, price, average_rating, review_count } = productData;
+
   const navigate = useNavigate();
   return (
     <div
@@ -11,15 +12,15 @@ function Product({ productData }) {
       }}
       className="wrap"
     >
-      <img className="items" src={img} alt="productImg" />
+      <img className="items" src={image} alt="productImg" />
       <span className="product-name">{name}</span>
-      <span className="product-price">{price}</span>
+      <span className="product-price">{Math.round(price)}</span>
       <span className="product-detail">
         <i className="fa fa-star" aria-hidden="true" />
         <span className="bold">
-          <span className="bold">{rating}</span>{' '}
+          <span className="bold">{average_rating}</span>{' '}
         </span>{' '}
-        | 리뷰 : {review}
+        | 리뷰 : {review_count}
       </span>
     </div>
   );

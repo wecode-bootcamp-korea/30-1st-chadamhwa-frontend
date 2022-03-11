@@ -1,41 +1,77 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Subnav from '../../components/Subnav/Subnav';
 import Product from './Product';
-
 import './Products.scss';
+
+const SORT_LIST = {
+  최신순: 'newest',
+  오래된순: 'oldest',
+  리뷰순: 'review',
+};
+
+const CATEGORY_LIST = [
+  { id: 1, content: '뿌리차', name: 'root_tea' },
+  { id: 2, content: '과일차', name: 'fruit_tea' },
+  { id: 3, content: '곡물차', name: 'grain_tea' },
+  { id: 4, content: '잎차', name: 'leaf_tea' },
+];
 
 function Products() {
   const [productsList, setProductsList] = useState([]);
-  const [category, setCategory] = useState([
-    '뿌리차',
-    '과일차',
-    '견과류차',
-    '잎차',
-  ]);
   const [categoryCheck, setCategoryCheck] = useState([]);
   const [isCaffeine, setIsCaffeine] = useState(false);
   const [isDecaffeine, setIsDecaffeine] = useState(false);
   const [priceRange, setPriceRange] = useState(0);
-  const [sortByKey, setSortByKey] = useState();
-  const sortBy = {
-    최신순: 'newest',
-    오래된순: 'oldest',
-    리뷰순: 'review',
-  };
-
-  // const location = useLocation();
+  const [sortByKey, setSortByKey] = useState('최신순');
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/data.json')
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/drinks/products?sort_by=newest'
+    )
       .then(res => res.json())
-      .then(data => setProductsList(data));
+      .then(data => setProductsList(data.result));
   }, []);
 
-  function activeBtn({ target }) {
-    target.classList.contains('active-btn')
-      ? target.classList.remove('active-btn')
-      : target.classList.add('active-btn');
+  useEffect(() => {
+    let addPath = '?';
+    const caffeineCheck = isCaffeine ? 'True' : 'False';
+
+    addPath = addPath + 'sort_by=' + SORT_LIST[sortByKey];
+
+    if (!!categoryCheck.length) {
+      categoryCheck.forEach(el => {
+        addPath =
+          addPath +
+          '&category=' +
+          CATEGORY_LIST.find(category => category.id === el).name;
+      });
+    }
+
+    if (isCaffeine || isDecaffeine) {
+      addPath = addPath + '&is_caffeinated=' + caffeineCheck;
+    }
+
+    if (priceRange) {
+      addPath = addPath + '&price_upper=' + priceRange;
+    }
+
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/drinks/products' +
+        addPath
+    )
+      .then(res => res.json())
+      .then(data => setProductsList(data.result));
+
+    console.log(addPath);
+  }, [categoryCheck, sortByKey, priceRange, isCaffeine, isDecaffeine]);
+
+  function btnHandler(id) {
+    if (categoryCheck.indexOf(id) !== -1) {
+      setCategoryCheck(categoryCheck.filter(el => el !== id));
+      return;
+    }
+
+    setCategoryCheck(categoryCheck.concat(id));
   }
 
   function activeBtnCaffeine({ target }) {
@@ -54,14 +90,6 @@ function Products() {
     }
   }
 
-  // function setUrl() {
-  //   let setPath = location.pathname + '/?';
-
-  //   function addPath() {
-  //     let addPathQueue = '';
-  //   }
-  // }
-
   return (
     <>
       <Subnav />
@@ -76,9 +104,17 @@ function Products() {
             <div className="filters">
               <div className="filter-categoriesBox">
                 <div className="filter-title">차 종</div>
-                {category.map((category, idx) => (
-                  <button key={idx} className="filter-btn" onClick={activeBtn}>
-                    {category}
+                {CATEGORY_LIST.map(category => (
+                  <button
+                    key={category.id}
+                    className={`filter-btn ${
+                      categoryCheck.indexOf(category.id) !== -1
+                        ? 'active-btn'
+                        : ''
+                    }`}
+                    onClick={() => btnHandler(category.id)}
+                  >
+                    {category.content}
                   </button>
                 ))}
               </div>
