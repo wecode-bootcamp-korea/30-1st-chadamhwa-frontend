@@ -30,8 +30,10 @@
 
 # 📝 적용 기술 및 구현 기능
 
+![차담화](https://user-images.githubusercontent.com/93993101/166433474-beb9da0d-656f-4e63-99e7-cfa8c311cfa6.gif)
 
 ### 적용 기술
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -40,4 +42,34 @@
 
 ### 구현 기능
 
+- Nav & Footer
+  - Nav : 스크롤바 이동시 함께 움직이게 구현, 로그인 버튼 클릭시, useNavigate() 훅을 이용하여 'login page'로 이동하도록 구현 
+  - Footer : 타겟 사이트 술담화의 footer와 동일하게 구현
 
+- Join(회원가입) 페이지
+  - id와 pw의 조건을 만족하면, 회원가입 버튼 활성화 기능구현   
+  - 조건 만족 못 할시, alert 창 발동 기능구현
+ 
+- Login(로그인) 페이지
+  - id와 pw 틀리게 기입하면, alert 창 발동 기능구현
+  - id("@"포함)와 pw("5자이상")조건 만족시, 로그인 버튼 활성화 기능구현
+  
+- Main 페이지
+  - 페이지 상단에 이벤트 배너 자동 슬라이드 기능구현
+  - 각각의 테마 소개 (테마 종류에 따라 전통차 다르게 추천) : 이중 map 사용해서 구현
+  - path parameter로 상품 id를 백엔드에 전달하여 메인 페이지에 필요한 데이터를 받아와 보여줌
+  - cart 버튼 클릭시, useNavigate() 훅을 이용하여 해당 cart 페이지로 이동
+
+- Product List 페이지
+  - 중복 필터링 기능으로 조건에 따른 전통차 표시 구현
+  - path parameter로 상품 id를 백엔드에 전달하여 상품 리스트 페이지에 필요한 데이터를 받아와 보여줌
+  - path parameter로 상품클릭시, 해당 상품 상세 페이지로 넘어가게 기능구현
+
+
+- product Detail 페이지
+  - 수량에 따른 총 가격 보여주는 기능 구현
+  - map을 사용한 각각의 상품에 별점을 표시 구현
+  
+  
+- Event 페이지
+  - 진행중인 이벤트 배너들을 보여줌
