@@ -6,17 +6,28 @@ import './Detail.scss';
 
 function Detail() {
   const [quantity, setQuantity] = useState(1);
-  const [detailData, setDetailData] = useState([]);
+  const [productData, setProductData] = useState({});
+  const [reviewData, setReviewData] = useState([]);
   const [rate, setRate] = useState(0);
   const [comment, setComment] = useState('');
 
   useEffect(() => {
-    fetch('http://10.58.7.52:8000/reviews/comments/1')
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/drinks/details/7'
+    )
       .then(res => res.json())
-      .then(data => setDetailData(data.review));
+      .then(data => setProductData(data.review));
   }, []);
 
-  const price = Math.floor(detailData[0].price);
+  useEffect(() => {
+    fetch(
+      'http://ec2-3-35-214-28.ap-northeast-2.compute.amazonaws.com:8000/reviews/comments/7'
+    )
+      .then(res => res.json())
+      .then(data => setReviewData(data.review));
+  }, []);
+
+  const price = productData.drink && Math.floor(productData.drink.price);
 
   const increaseQuantity = () => {
     setQuantity(quantity => quantity + 1);
@@ -27,20 +38,6 @@ function Detail() {
 
   const totalPrice = price * quantity;
 
-  const handleReviewData = e => {
-    e.preventDefault();
-    fetch('http://??', {
-      method: 'POST',
-      body: JSON.stringify({}),
-      // user: username,
-      // drink_id: boughtProduct,
-      rating: rate,
-      comment: comment,
-    })
-      .then(response => response.json())
-      .then(response => setDetailData(response));
-  };
-
   const getRate = e => {
     setRate(e.target.value);
   };
@@ -50,29 +47,29 @@ function Detail() {
   };
 
   return (
-    detailData.length > 0 && (
-      <>
-        <SubNav />
+    <>
+      <SubNav />
+      {productData.image && (
         <div className="detail">
           <div className="leftSide">
             <section className="productIntro">
               <div className="productMainImage">
                 <img
                   className="productImg"
-                  src={detailData[0].thumb_img}
+                  src={productData.image.thumbnail}
                   alt="Product"
                 />
               </div>
               <div className="productIntroduction">
                 <ul>
-                  <Intro productData={detailData[0]} />
+                  <Intro productData={productData} />
                 </ul>
               </div>
             </section>
             <div className="productDetails">
               <img
                 className="productDetailImage"
-                src={detailData[0].detail_img}
+                src={productData.image.detail}
                 alt="Product details"
               />
             </div>
@@ -80,7 +77,7 @@ function Detail() {
               <div id="reviewInDetail" className="review">
                 <button className="reviewBtn">리뷰</button>
               </div>
-              <form onSubmit={handleReviewData}>
+              <form>
                 <div>
                   <i className="fa fa-star" aria-hidden="true" />
                   <input
@@ -101,7 +98,7 @@ function Detail() {
                 />
                 <button>입력</button>
               </form>
-              <ReviewList reviewData={detailData} />
+              <ReviewList reviewData={reviewData} />
             </div>
           </div>
           <div className="rightSideWrapper">
@@ -156,8 +153,8 @@ function Detail() {
             </div>
           </div>
         </div>
-      </>
-    )
+      )}
+    </>
   );
 }
 

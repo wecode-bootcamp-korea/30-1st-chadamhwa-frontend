@@ -3,6 +3,7 @@ import './Product.scss';
 
 function Product({ productData }) {
   const { id, image, name, price, average_rating, review_count } = productData;
+
   const navigate = useNavigate();
   return (
     <div
