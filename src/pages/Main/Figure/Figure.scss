@@ -1,0 +1,182 @@
+.figure {
+  width: 100%;
+  height: 300px;
+  margin-top: 95px;
+  margin-bottom: 15px;
+  .slide-list {
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+
+    .slide-item {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      transition: all 1s;
+
+      a {
+        display: block;
+        width: auto;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        label {
+          position: absolute;
+          padding: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 1;
+
+          &.prev {
+            left: 30px;
+            background: url('../../../../public/images/leftarrow.png') center
+              center / 50% no-repeat;
+          }
+
+          &.next {
+            right: 30px;
+            background: url('../../../../public/images/rightarrow.png') center
+              center / 50% no-repeat;
+          }
+        }
+      }
+    }
+  }
+  input[name='slide'] {
+    display: none;
+  }
+  [id='slide01']:checked ~ .slide-list .slide-item {
+    transform: translateX(0);
+    animation: slide01 20s infinite;
+  }
+
+  [id='slide02']:checked ~ .slide-list .slide-item {
+    transform: translateX(-100%);
+    animation: slide02 20s infinite;
+  }
+
+  [id='slide03']:checked ~ .slide-list .slide-item {
+    transform: translateX(-200%);
+    animation: slide03 20s infinite;
+  }
+
+  [id='slide04']:checked ~ .slide-list .slide-item {
+    transform: translateX(-300%);
+    animation: slide04 20s infinite;
+  }
+
+  [id='slide05']:checked ~ .slide-list .slide-item {
+    transform: translateX(-400%);
+    animation: slide05 20s infinite;
+  }
+}
+
+@keyframes slide01 {
+  0% {
+    left: 0%;
+  }
+  33% {
+    left: 0%;
+  }
+  34% {
+    left: -100%;
+  }
+  66% {
+    left: -100%;
+  }
+  67% {
+    left: -200%;
+  }
+  99% {
+    left: -200%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slide02 {
+  0% {
+    left: 0%;
+  }
+  33% {
+    left: 0%;
+  }
+  34% {
+    left: -100%;
+  }
+  66% {
+    left: -100%;
+  }
+  67% {
+    left: 100%;
+  }
+  99% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slide03 {
+  0% {
+    left: 0%;
+  }
+  33% {
+    left: 0%;
+  }
+  34% {
+    left: 200%;
+  }
+  66% {
+    left: 200%;
+  }
+  67% {
+    left: 100%;
+  }
+  99% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes slide04 {
+  0% {
+    left: 0%;
+  }
+  23% {
+    left: 0%;
+  }
+  25% {
+    left: 300%;
+  }
+  48% {
+    left: 300%;
+  }
+  50% {
+    left: 200%;
+  }
+  73% {
+    left: 200%;
+  }
+  75% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
